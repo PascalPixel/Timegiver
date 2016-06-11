@@ -1,0 +1,47 @@
+!!! 5
+
+/                                                         
+/                           ██                            
+/                          ████                           
+/           ████          ██████          ████            
+/         █████          ██    ██           █████         
+/        ██             ██      ██              ██        
+/        ██            ██        ██             ██        
+/        ██           ██          ██            ██        
+/        ██          ██            ██           ██        
+/        ██         █████        █████          ██        
+/       ██          ██   ████████   ██           ██       
+/     ██            ██   █      █   ██             ██     
+/       ██          ██   █      █   ██           ██       
+/        ██         ██   █      █   ██          ██        
+/        ██         ██   █      █   ██          ██        
+/        ██         ██   █      █   ██          ██        
+/        ██         ██   █      █   ██          ██        
+/        ██         ██   █      █   ██          ██        
+/         █████     ██   █      █   ██      █████         
+/           ████    ██   █      █   ██    ████            
+/                     ██████████████                      
+/                                                         
+
+%html{lang: I18n.locale}
+  %head
+    %meta{charset: 'utf-8'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no'}
+    %meta{:'http-equiv' => 'x-ua-compatible', content: 'ie=edge'}
+    = csrf_meta_tags
+
+    %title Superpencil Stack
+    %meta{content: 'Basic stack'}
+
+    = favicon_link_tag 'favicon.png', rel: 'shortcut icon', type: 'image/png'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+  %body{id: params[:controller], class: params[:action]}
+    = render partial: 'shared/navbar'
+    = render partial: 'shared/flash'
+
+    = yield
+
+    = render partial: 'shared/footer'

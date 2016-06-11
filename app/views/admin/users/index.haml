@@ -1,0 +1,40 @@
+.container
+  .row
+    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+      .card
+        .card-header.clearfix
+          .pull-left
+            %ol.breadcrumb
+              %li
+                = link_to admin_teams_path do
+                  %span.fa.fa-user-secret
+                  Admin
+              %li.active
+                %span.fa.fa-users
+                Users
+          .pull-right
+            - if current_user.admin == true
+              = link_to 'New', new_admin_user_path, class: 'btn btn-primary-outline'
+
+        .card-block
+          %table.table
+            %thead
+              %tr
+                %th Email
+                %th Admin
+                %th.text-xs-right Actions
+
+            %tbody
+              - @users.each do |user|
+                %tr{id: dom_id(user)}
+                  %td
+                    = link_to user.email, admin_user_path(user)
+                  %td
+                    - if user.admin
+                      Yes
+                    - else
+                      No
+                  %td.text-xs-right
+                    - if current_user.admin == true
+                      = link_to 'Edit', edit_admin_user_path(user), class: 'btn btn-secondary-outline'
+                      = link_to 'Delete', admin_user_path(user), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'

@@ -1,0 +1,27 @@
+%nav.navbar.navbar-full
+  %button.navbar-toggler.hidden-md-up.pull-xs-right{"data-target" => "#collapsenav", "data-toggle" => "collapse", :type => "button"}
+    ☰
+  = link_to root_url, class: 'navbar-brand' do
+    = t('.name')
+  #collapsenav.collapse.navbar-toggleable-sm.pull-xs-left.pull-md-none
+    %ul.nav.navbar-nav.pull-md-right
+      %li.nav-item.pull-xs-none.pull-md-left
+        - if I18n.locale == :en
+          = link_to content_tag(:span, '', class: 'fa fa-globe') + ' 日本語', current_path_new_locale('ja'.to_sym), class: 'nav-link'
+        - else
+          = link_to content_tag(:span, '', class: 'fa fa-globe') + ' English', current_path_new_locale('en'.to_sym), class: 'nav-link'
+
+      - if user_signed_in?
+        %li.nav-item.pull-xs-none.pull-md-left
+          = link_to content_tag(:span, '', class: 'fa fa-user-secret') + ' Admin', admin_teams_path, class: 'nav-link'
+
+        - if current_user.admin
+          %li.nav-item.pull-xs-none.pull-md-left
+            = link_to content_tag(:span, '', class: 'fa fa-users') + ' Users', admin_users_path, class: 'nav-link'
+
+        %li.nav-item.pull-xs-none.pull-md-left
+          = link_to content_tag(:span, '', class: 'fa fa-sign-out') + ' Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
+
+      - else
+        %li.nav-item.pull-xs-none.pull-md-left
+          = link_to content_tag(:span, '', class: 'fa fa-user') + ' Login', new_user_session_path, class: 'nav-link'

@@ -1,0 +1,49 @@
+.navbar-brand
+  background: $brand-primary
+  font-weight: 600
+  padding: .4rem .6rem .3em
+  color: $highlight
+  border-radius: .4rem
+  font-size: 1em
+
+.navbar-toggler,
+.nav-link,
+.btn-secondary-outline
+  color: $gray-dark
+  border-color: $gray-dark
+
+  &:hover
+    color: darken($gray-dark, 10%)
+    border-color: darken($gray-dark, 10%)
+
+.nav-link
+  padding-left: .4rem
+  padding-right: .4rem
+
+.navbar-toggler
+  border-width: .1875rem
+
+.navbar
+  background: $gray-lightest
+  padding: 1.5rem 1.5rem
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+
+.navbar-nav .nav-item+.nav-item
+  margin-left: .75rem
+
+@include media-breakpoint-down(sm)
+  .navbar-nav .nav-item + .nav-item
+    margin-left: 0rem
+
+  #collapsenav
+    clear: both
+    width: 100%
+
+  .dropdown-menu
+    left: 0
+    right: 0
+    position: relative
+    width: 100%

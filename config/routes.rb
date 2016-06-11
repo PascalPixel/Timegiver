@@ -1,58 +1,38 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  devise_for :users
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  # Serve websocket cable requests in-process
+  # mount ActionCable.server => '/cable'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  # Scope manages languages
+  scope "/:locale", locale: /en|ja/ do
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    # Devise
+    devise_for :users
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+    # Public
+    # get "about", to: "welcomes#about"
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    # Private
+    authenticate :user do
+      namespace :admin do
+        resources :teams
+        resources :users
+      end
+    end
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+    # Roots
+    root to: "welcomes#index", as: :public_root
+    authenticated :user do
+      root to: "admin#index"
+    end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    # Reroute bad links to home
+    get "*path", to: "welcomes#index"
+  end
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
+  # Redirect to language
+  root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(en|ja)\/).*/}, format: false
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

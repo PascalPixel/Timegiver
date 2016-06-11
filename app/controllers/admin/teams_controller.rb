@@ -1,0 +1,56 @@
+class Admin::TeamsController < Admin::BaseController
+  before_action :get_team, only: [:show, :edit, :update, :destroy]
+
+  # GET /teams
+  def index
+    @teams = current_user.team_list.order(:company_name, :last_name, :first_name)
+  end
+
+  # GET /admin/1
+  def show
+  end
+
+  # GET /admin/new
+  def new
+    @team = Team.new(user_ids: [current_user.id])
+  end
+
+  # GET /admin/1/edit
+  def edit
+  end
+
+  # POST /teams
+  def create
+    @team = Team.new(team_params)
+
+    if @team.save
+      redirect_to admin_team_path(@team), notice: 'Team was successfully created.'
+    else
+      render :new
+    end
+  end
+
+  # PATCH/PUT /admin/1
+  def update
+    if @team.update(team_params)
+      redirect_to admin_team_path(@team), notice: 'Team was successfully edited.'
+    else
+      render :edit
+    end
+  end
+
+  # DELETE /admin/1
+  def destroy
+    @team.destroy
+    redirect_to admin_teams_path, notice: 'Team was successfully deleted.'
+  end
+
+  private
+    def get_team
+      @team = Team.friendly.find(params[:id])
+    end
+
+    def team_params
+      params.require(:team).permit(:description, :last_name, :first_name, :title, :rate, :currency_sign, :currency, :company_name, :street_address_1, :street_address_2, :postal, :city, :country, :color, user_ids: [])
+    end
+end

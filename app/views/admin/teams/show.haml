@@ -1,0 +1,82 @@
+.container
+  .row
+    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+      .card
+        .card-header.clearfix
+          .pull-left
+            %ol.breadcrumb
+              %li
+                = link_to admin_teams_path do
+                  %span.fa.fa-user-secret
+                  Admin
+              %li.active{style: "color:##{@team.color}"}= @team.company_name
+          .pull-right
+            - if current_user.admin == true
+              = link_to 'Edit', edit_admin_team_path(@team), class: 'btn btn-secondary-outline'
+              = link_to 'Delete', admin_team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
+
+        %ul.list-group.list-group-flush
+          %li.list-group-item
+            .row
+              .col-sm-6
+                %h5 Company
+                %dl
+                  %dt Company name
+                  %dd= @team.company_name
+                  %dt Description
+                  %dd= @team.description
+                  %dt Color
+                  %dd
+                    .team-color
+                      %span> #
+                      = @team.color
+                    :scss
+                      .team-color {
+                        background: ##{@team.color};
+                        color: darken(##{@team.color}, 20%);
+                        padding: 5px 8px;
+                        border-radius: 5px;
+                        display: inline-block;
+                      }
+              .col-sm-6
+                %h5 Contact
+                %dl
+                  %dt Last name
+                  %dd= @team.last_name
+                  %dt First name
+                  %dd= @team.first_name
+                  %dt Title
+                  %dd= @team.title
+
+          %li.list-group-item
+            .row
+              .col-sm-6
+                %h5 Address
+                %dl
+                  %dt Street address 1
+                  %dd= @team.street_address_1
+                  %dt Street address 2
+                  %dd= @team.street_address_2
+                  %dt Postal
+                  %dd= @team.postal
+                  %dt City
+                  %dd= @team.city
+                  %dt Country
+                  %dd= @team.country
+              .col-sm-6
+                %h5 Accounting
+                %dl
+                  %dt Rate
+                  %dd= @team.rate
+                  %dt Currency sign
+                  %dd= @team.currency_sign
+                  %dt Currency
+                  %dd= @team.currency
+
+          - if current_user.admin == true
+            %li.list-group-item
+              .row
+                .col-sm-6
+                  %h5 Users
+                  %dl
+                    = @team.users.order(:email).map { |u| u.email.split('@').first }.join(', ')

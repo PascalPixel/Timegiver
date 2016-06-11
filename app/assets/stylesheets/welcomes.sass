@@ -1,0 +1,35 @@
+#welcomes.index
+  height: 100%
+
+  @include media-breakpoint-up(md)
+    .navbar
+      background: transparent
+      box-shadow: none
+
+      .navbar-brand
+        background: none
+
+      .navbar-brand,
+      .navbar-toggler,
+      .nav-link
+        color: white
+        border-color: white
+
+        &:hover
+          color: $gray-lightest
+          border-color: $gray-lightest
+
+  .hero
+    background-position: center
+    background-size: cover
+    color: white
+    height: 100%
+    background: linear-gradient(45deg, transparentize($brand-primary, 0.1), transparent), image-url('bay_from_unsplash_dot_com.jpg')
+    background-size: cover
+    background-position: center
+
+    .wrapper
+      text-align: center
+
+    a, h1, h2, h3, h4, h5
+      color: white

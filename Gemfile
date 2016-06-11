@@ -1,49 +1,87 @@
 source 'https://rubygems.org'
-gem "react_on_rails", "~> 5"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
-# Use postgresql as the database for Active Record
-gem 'pg', '~> 0.15'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-# Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+# Bundler
+gem 'bundler', '>= 1.8.4'
 
-# Use devise for authentication
-gem 'devise'
+# Rails
+gem 'rails', '~> 5.0.0.rc1' # BETA Ruby on Rails
+gem 'puma', '~> 3.4.0' # Faster local server
+gem 'rails-i18n', '~> 5.x' # Show different languages
+gem 'pg', '~> 0.18.4' # Postgres databases are cool
+gem 'turbolinks', '~> 5.x' # BETA Only reload page content
+gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
+gem 'react-rails', '~> 1.7.1' # React for the future of the human race
+# gem "react_on_rails", "~> 5"
 
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
-# bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+# Authentication
+gem 'devise', '~> 4.1.1' # Users! Everywhere!
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# Precompilers
+gem 'haml-rails', '~> 0.9.0' # HAML to HTML
+gem 'sass-rails', '~> 5.0.4' # Sass to CSS
+gem 'coffee-rails', '~> 4.1.1' # Coffeescript to JS
+gem 'jbuilder', '~> 2.4.1' # JSON
+gem 'uglifier', '~> 3.0.0' # Clean outputs
+gem 'redcarpet', '~> 3.3.4' # Markdown
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# Forms
+gem 'mail_form', '~> 1.5.1' # really?
+gem 'nested_form', '~> 0.3.2' # Formception
+gem 'simple_form', '~> 3.2.1' # Unformception
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# Alerts
+gem 'bootbox-rails', '~> 0.5.0' # Fancy Bootstrap alerts
 
+# Vendor
+gem 'jquery-rails', '~> 4.1.1' # jQuery, super handy
+gem 'bootstrap', '~> 4.0.x' # BETA Bootstrap 4 for layout
+gem 'font-awesome-rails', '~> 4.6.3.0' # Icon font
+gem 'postmark-rails', '~> 0.12.0' # Email through Heroku
+
+# Bower
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0' # Needed for Bootstrap 4 Tooltips and Popovers
+  gem 'rails-assets-signature_pad', '~> 1.2.4' # Signatures on contracts using touch or mouse input
+  gem 'rails-assets-chosen', '~> 1.5.1' # Beautiful Select dropdowns
+  gem 'rails-assets-animate.css', '~> 3.5.1' # Stock CSS Animations
+  gem 'rails-assets-velocity', '~> 1.2.2' # Super fast animation with JS
+end
+
+# Docs
+group :doc do
+  gem 'sdoc', '~> 0.4.1'
+end
+
+# Development and Testing
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', '~> 9.0.3'
+  gem 'rails-controller-testing', :git => 'https://github.com/rails/rails-controller-testing' # Needed for RSPEC on controllers
+  gem 'rspec-rails', '~> 3.5.x' # BETA Running tests
 end
 
+# Development
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'web-console', '~> 3.1.1'
+  gem 'listen', '~> 3.1.4'
+  gem 'spring', '~> 1.7.1'
+  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'seed_dump', '~> 3.2.4' # Export DB to seeds.db
 end
+
+# Testing
+group :test do
+  gem 'capybara', '~> 2.7.0'
+  gem 'database_cleaner', '~> 1.5.2'
+  gem 'factory_girl_rails', '~> 4.7.0'
+  gem 'launchy', '~> 2.4.3'
+  gem 'shoulda-matchers', '~> 3.1.1'
+end
+
+group :production do
+  gem 'rails_12factor'
+end
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby] # For Windows to run dis
+
+# Ruby version
+ruby '2.3.1'

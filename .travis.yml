@@ -1,0 +1,26 @@
+language: ruby
+sudo: false
+
+rvm:
+  - 2.3.1
+
+services:
+  - postgresql
+
+cache:
+  bundler: true
+  apt: true
+
+script:
+  - RAILS_ENV=test bundle exec rspec $PARAMS
+
+before_install:
+  - gem install bundler
+
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - RAILS_ENV=test bundle exec rake db:setup
+  - RAILS_ENV=test bundle exec rake db:migrate
+
+notifications:
+  slack: superpencil:65UK3tXythq5Yes7x9zJtGks
