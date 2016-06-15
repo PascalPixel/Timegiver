@@ -16,12 +16,16 @@ var App = React.createClass({
   },
   render: function() {
     return (
-      <div>
-        <div className="menu">
+      <div className="row">
+        <div className="col-sm-4">
           <Header tagline="Remote team management" />
         </div>
-        <Order />
-        <Inventory />
+        <div className="col-sm-4">
+          <Order />
+        </div>
+        <div className="col-sm-4">
+          <Inventory />
+        </div>
       </div>
     )
   }
