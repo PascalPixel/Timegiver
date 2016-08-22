@@ -8,5 +8,4 @@ class User < ApplicationRecord
   def team_list
     self.admin ? Team.all : self.teams
   end
-
 end

@@ -6,4 +6,5 @@ ja:
       menuitem: Item
   welcomes:
     index:
-      header: Rails 5 + Bootstrap 4
+      header: Keep track of remote teams
+      subheader: Plan meetings, view locations, no more timezone mess.
