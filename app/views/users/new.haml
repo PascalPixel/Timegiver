@@ -5,16 +5,16 @@
         .card-header.clearfix
           .pull-left
             %ol.breadcrumb
-              %li
+              %li.breadcrumb-item
                 = link_to teams_path do
                   %span.fa.fa-users
                   Teams
-              %li
+              %li.breadcrumb-item
                 = link_to users_path(team_id: @team) do
                   %span.fa.fa-group
                   Users
-              %li.active New
+              %li.breadcrumb-item.active New
           .pull-right
-            = link_to 'Cancel', users_path(team_id: @team), class: 'btn btn-outline-secondary'
+            = link_to 'Cancel', users_path(team_id: @team), class: 'btn btn-secondary'
 
         = render partial: "form"
