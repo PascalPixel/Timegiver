@@ -10,9 +10,9 @@ describe "Creating teams" do
     expect(page).to have_content("Salmon, Inc.")
   end
 
-  it "displays an error when the team has no company name" do
-    create_team company_name: ""
-    expect(page).to have_content("Company name can't be blank")
+  it "displays an error when the team has no team name" do
+    create_team team_name: ""
+    expect(page).to have_content("Team name can't be blank")
   end
 
   it "displays an error when the team has no description" do
@@ -103,7 +103,7 @@ describe "Creating teams" do
   private
 
   def create_team(options={})
-    options[:company_name] ||= "Salmon, Inc."
+    options[:team_name] ||= "Salmon, Inc."
     options[:description] ||= "Bunch of fishy people"
     options[:last_name] ||= "Salmoncake"
     options[:first_name] ||= "Sammy"
@@ -120,7 +120,7 @@ describe "Creating teams" do
 
     visit new_team_path
 
-    fill_in "Company name", with: options[:company_name]
+    fill_in "Team name", with: options[:team_name]
     fill_in "Description", with: options[:description]
     fill_in "Last name", with: options[:last_name]
     fill_in "First name", with: options[:first_name]

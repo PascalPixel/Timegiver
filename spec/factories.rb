@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :team do
-    sequence(:company_name)         { |n| "Company #{n}" }
+    sequence(:team_name)         { |n| "Team #{n}" }
     sequence(:description)          { |n| "Happy Team Co#{n} has a lengthy description" }
     sequence(:color)                { |n| "FC#{n % 10}F6F" }
     sequence(:last_name)            { |n| "Doe#{n}" }

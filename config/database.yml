@@ -5,7 +5,7 @@ default: &default
 
 development:
   <<: *default
-  database: superpencil_stack_dev
+  database: zeitgeber_dev
 
 test:
   <<: *default

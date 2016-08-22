@@ -1,5 +1,5 @@
 .container
-  .col-sm-8.col-sm-offset-2
+  .col-sm-8.offset-sm-2
     .card
       .card-header
         %h4 Sign up
@@ -14,6 +14,6 @@
             = f.input :password_confirmation, required: true
 
           .form-actions
-            = f.button :submit, "Sign up", class: 'btn btn-primary-outline btn-block'
+            = f.button :submit, "Sign up", class: 'btn btn-primary btn-block'
 
         = render "devise/shared/links"
