@@ -42,11 +42,13 @@
 //
 // Grayscale and brand colors for use across Bootstrap.
 
+$gray-dark:                 desaturate(lighten($navy, 80%), 40%);
 $gray:                      desaturate(lighten($navy, 40%), 70%);
 $gray-light:                desaturate(lighten($navy, 20%), 50%);
+$gray-lighter:              desaturate(lighten($navy, 5%), 20%);
 $gray-lightest:             $navy;
 
-$brand-primary:             $blue;
+$brand-primary:             saturate($gray-light, 30%);
 $brand-success:             $green;
 $brand-info:                $aqua;
 $brand-warning:             $yellow;
@@ -102,6 +104,7 @@ $border-width: 1px !default;
 //
 // Settings for the `<body>` element.
 
+$body-bg:    darken($gray-lightest, 3%);
 $body-color: $gray-dark;
 
 
@@ -112,7 +115,7 @@ $body-color: $gray-dark;
 $link-color:            $gray-dark;
 $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
-$link-hover-decoration: underline !default;
+$link-hover-decoration: none;
 
 
 // Grid breakpoints
@@ -265,28 +268,29 @@ $btn-font-weight:                700;
 $btn-box-shadow:                 inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075) !default;
 $btn-active-box-shadow:          inset 0 3px 5px rgba(0,0,0,.125) !default;
 
-$btn-primary-bg:                 $brand-primary !default;
-$btn-primary-border:             $btn-primary-bg !default;
 $btn-primary-color:              $gray-dark;
+$btn-primary-bg:                 $brand-primary;
+$btn-primary-border:             $btn-primary-bg;
 
-$btn-secondary-bg:               $gray-lightest;
 $btn-secondary-color:            $gray-dark;
+$btn-secondary-bg:               $gray-light;
+$btn-secondary-border:           $btn-secondary-bg;
 
-$btn-info-bg:                    $brand-info !default;
-$btn-info-border:                $btn-info-bg !default;
 $btn-info-color:                 $gray-dark;
+$btn-info-bg:                    $brand-info;
+$btn-info-border:                $btn-info-bg;
 
-$btn-success-bg:                 $brand-success !default;
-$btn-success-border:             $btn-success-bg !default;
 $btn-success-color:              $gray-dark;
+$btn-success-bg:                 $brand-success;
+$btn-success-border:             $btn-success-bg;
 
-$btn-warning-bg:                 $brand-warning !default;
-$btn-warning-border:             $btn-warning-bg !default;
 $btn-warning-color:              $gray-dark;
+$btn-warning-bg:                 $brand-warning;
+$btn-warning-border:             $btn-warning-bg;
 
-$btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              $btn-danger-bg !default;
 $btn-danger-color:               $gray-dark;
+$btn-danger-bg:                  $brand-danger;
+$btn-danger-border:              $btn-danger-bg;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -311,6 +315,7 @@ $input-padding-x:                .75rem !default;
 $input-padding-y:                .5rem !default;
 $input-line-height:              1.25 !default;
 
+$input-bg:                       darken($gray-lightest, 3%);
 $input-bg-disabled:              $gray-dark;
 
 $input-color:                    $gray-dark;
@@ -435,14 +440,15 @@ $form-icon-danger: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www
 $dropdown-min-width:             160px !default;
 $dropdown-padding-y:             5px !default;
 $dropdown-margin-top:            2px !default;
-$dropdown-border-color:          rgba(0,0,0,.15) !default;
+$dropdown-bg:                    $gray-lightest;
+$dropdown-border-color:          $gray-light !default;
 $dropdown-border-width:          $border-width !default;
-$dropdown-divider-bg:            #e5e5e5 !default;
+$dropdown-divider-bg:            $gray-light !default;
 $dropdown-box-shadow:            0 6px 12px rgba(0,0,0,.175) !default;
 
 $dropdown-link-color:            $gray-dark !default;
 $dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
-$dropdown-link-hover-bg:         #f5f5f5 !default;
+$dropdown-link-hover-bg:         lighten($gray-lightest, 5%) !default;
 
 $dropdown-link-active-color:     $component-active-color !default;
 $dropdown-link-active-bg:        $component-active-bg !default;
