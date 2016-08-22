@@ -1,6 +1,6 @@
 .container
   .row
-    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
           .pull-left
@@ -10,7 +10,7 @@
                 Teams
           .pull-right
             -# if current_user.admin == true
-            = link_to 'New', new_team_path, class: 'btn btn-primary-outline'
+            = link_to 'New', new_team_path, class: 'btn btn-primary'
 
         .card-block
           %table.table
@@ -23,6 +23,6 @@
               - @teams.each do |team|
                 %tr{id: dom_id(team)}
                   %td
-                    %b= link_to team.company_name, team_path(team), style: "color:##{team.color}"
+                    %b= link_to team.team_name, team_path(team), style: "color:##{team.color}"
                     %br
                     = team.description

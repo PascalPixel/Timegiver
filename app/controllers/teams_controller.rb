@@ -4,7 +4,7 @@ class TeamsController < ApplicationController
 
   # GET /teams
   def index
-    @teams = current_user.team_list.order(:company_name, :last_name, :first_name)
+    @teams = current_user.team_list.order(:team_name, :last_name, :first_name)
   end
 
   # GET /admin/1
@@ -52,6 +52,6 @@ class TeamsController < ApplicationController
     end
 
     def team_params
-      params.require(:team).permit(:description, :last_name, :first_name, :title, :rate, :currency_sign, :currency, :company_name, :street_address_1, :street_address_2, :postal, :city, :country, :color, user_ids: [])
+      params.require(:team).permit(:description, :last_name, :first_name, :title, :rate, :currency_sign, :currency, :team_name, :street_address_1, :street_address_2, :postal, :city, :country, :color, user_ids: [])
     end
 end

@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160426115801) do
     t.string   "rate"
     t.string   "currency_sign"
     t.string   "currency"
-    t.string   "company_name"
+    t.string   "team_name"
     t.string   "street_address_1"
     t.string   "street_address_2"
     t.string   "postal"

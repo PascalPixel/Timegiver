@@ -7,7 +7,7 @@ describe "Editing teams" do
 
   let!(:team) {Team.create(
     user_ids: [@user.id],
-    company_name: "Salmon, Inc.",
+    team_name: "Salmon, Inc.",
     description: "Bunch of fishy people",
     last_name: "Salmoncake",
     first_name: "Sammy",
@@ -25,20 +25,20 @@ describe "Editing teams" do
 
   it "updates a team succesfully with correct information" do
     update_team team: team,
-                  company_name: 'New title',
+                  team_name: 'New title',
                   description: 'New description that is long'
 
     team.reload
 
     expect(page).to have_content("Team was successfully edited")
-    expect(team.company_name).to eq("New title")
+    expect(team.team_name).to eq("New title")
     expect(team.description).to eq("New description that is long")
   end
 
   private
 
   def update_team(options={})
-    options[:company_name] ||= "Baka"
+    options[:team_name] ||= "Baka"
     options[:description] ||= "Bunch"
     options[:last_name] ||= "Salmon"
     options[:first_name] ||= "Sam"
@@ -56,11 +56,11 @@ describe "Editing teams" do
 
     visit teams_path
     within "#team_#{team.id}" do
-      click_link team.company_name
+      click_link team.team_name
     end
     click_link "Edit"
 
-    fill_in "Company name", with: options[:company_name]
+    fill_in "Team name", with: options[:team_name]
     fill_in "Description", with: options[:description]
     fill_in "Last name", with: options[:last_name]
     fill_in "First name", with: options[:first_name]

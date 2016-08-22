@@ -10,10 +10,10 @@
             = msg
     .row
       .col-sm-6
-        %h5 Company
+        %h5 Team
         .field
-          = f.label :company_name
-          = f.text_field :company_name, class: 'form-control', autofocus: true
+          = f.label :team_name
+          = f.text_field :team_name, class: 'form-control', autofocus: true
         .field
           = f.label :description
           = f.text_area :description, class: 'form-control'
@@ -74,4 +74,4 @@
   .card-footer
     .row
       .col-sm-12
-        = f.submit 'Save', class: 'btn btn-primary-outline btn-block'
+        = f.submit 'Save', class: 'btn btn-primary btn-block'
