@@ -5,14 +5,14 @@
         .card-header.clearfix
           .pull-left
             %ol.breadcrumb
-              %li
+              %li.breadcrumb-item
                 = link_to teams_path do
                   %span.fa.fa-users
                   Teams
-              %li.active{style: "color:##{@team.color}"}= @team.team_name
+              %li.breadcrumb-item.active{style: "color:##{@team.color}"}= @team.team_name
           .pull-right
             -# if current_user.admin == true
-            = link_to 'Edit', edit_team_path(@team), class: 'btn btn-outline-secondary'
+            = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
             = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
         %ul.list-group.list-group-flush
