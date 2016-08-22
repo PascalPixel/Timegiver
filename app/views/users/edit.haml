@@ -6,15 +6,19 @@
           .pull-left
             %ol.breadcrumb
               %li
-                = link_to admin_teams_path do
+                = link_to teams_path do
                   %span.fa.fa-user-secret
                   Admin
               %li
-                = link_to admin_users_path(team_id: @team) do
+                = link_to users_path(team_id: @team) do
                   %span.fa.fa-group
                   Users
-              %li.active New
+              %li
+                = link_to user_path(@user) do
+                  %span.fa.fa-user
+                  = @user.id
+              %li.active Edit
           .pull-right
-            = link_to 'Cancel', admin_users_path(team_id: @team), class: 'btn btn-secondary-outline'
+            = link_to 'Cancel', users_path(team_id: @team), class: 'btn btn-secondary-outline'
 
         = render partial: "form"

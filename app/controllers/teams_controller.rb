@@ -1,4 +1,5 @@
-class Admin::TeamsController < Admin::BaseController
+class TeamsController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_team, only: [:show, :edit, :update, :destroy]
 
   # GET /teams
@@ -24,7 +25,7 @@ class Admin::TeamsController < Admin::BaseController
     @team = Team.new(team_params)
 
     if @team.save
-      redirect_to admin_team_path(@team), notice: 'Team was successfully created.'
+      redirect_to team_path(@team), notice: 'Team was successfully created.'
     else
       render :new
     end
@@ -33,7 +34,7 @@ class Admin::TeamsController < Admin::BaseController
   # PATCH/PUT /admin/1
   def update
     if @team.update(team_params)
-      redirect_to admin_team_path(@team), notice: 'Team was successfully edited.'
+      redirect_to team_path(@team), notice: 'Team was successfully edited.'
     else
       render :edit
     end
@@ -42,7 +43,7 @@ class Admin::TeamsController < Admin::BaseController
   # DELETE /admin/1
   def destroy
     @team.destroy
-    redirect_to admin_teams_path, notice: 'Team was successfully deleted.'
+    redirect_to teams_path, notice: 'Team was successfully deleted.'
   end
 
   private

@@ -24,7 +24,7 @@ describe "Deleting teams" do
   )}
 
   it "can click the delete link" do
-    visit admin_teams_path
+    visit teams_path
 
     within "#team_#{team.id}" do
       click_link team.company_name

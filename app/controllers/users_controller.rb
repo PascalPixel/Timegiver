@@ -1,4 +1,5 @@
-class Admin::UsersController < Admin::BaseController
+class UsersController < ApplicationController
+  before_action :authenticate_user!
   before_action :get_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

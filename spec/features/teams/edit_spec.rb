@@ -54,7 +54,7 @@ describe "Editing teams" do
     options[:color] ||= "AA00FF"
     team = options[:team]
 
-    visit admin_teams_path
+    visit teams_path
     within "#team_#{team.id}" do
       click_link team.company_name
     end

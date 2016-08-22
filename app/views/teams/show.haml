@@ -6,14 +6,14 @@
           .pull-left
             %ol.breadcrumb
               %li
-                = link_to admin_teams_path do
+                = link_to teams_path do
                   %span.fa.fa-user-secret
                   Admin
               %li.active{style: "color:##{@team.color}"}= @team.company_name
           .pull-right
             - if current_user.admin == true
-              = link_to 'Edit', edit_admin_team_path(@team), class: 'btn btn-secondary-outline'
-              = link_to 'Delete', admin_team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
+              = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary-outline'
+              = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
 
         %ul.list-group.list-group-flush
           %li.list-group-item

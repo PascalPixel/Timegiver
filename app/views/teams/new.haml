@@ -6,11 +6,11 @@
           .pull-left
             %ol.breadcrumb
               %li
-                = link_to admin_teams_path do
+                = link_to teams_path do
                   %span.fa.fa-user-secret
                   Admin
               %li.active New
           .pull-right
-            = link_to 'Cancel', admin_teams_path, class: 'btn btn-secondary-outline'
+            = link_to 'Cancel', teams_path, class: 'btn btn-secondary-outline'
 
         = render 'form'

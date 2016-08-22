@@ -15,10 +15,8 @@ Rails.application.routes.draw do
 
     # Private
     authenticate :user do
-      namespace :admin do
-        resources :teams
-        resources :users
-      end
+      resources :teams
+      resources :users
     end
 
     # Roots
