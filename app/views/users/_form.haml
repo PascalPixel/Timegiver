@@ -1,4 +1,4 @@
-= simple_form_for [:admin, @user] do |f|
+= simple_form_for @user do |f|
   .card-block
     - if @user.errors.any?
       #error_explanation
@@ -24,6 +24,6 @@
   .card-footer
     .row
       .col-xs-6
-        = link_to 'Back', admin_users_path, class: "btn btn-secondary-outline btn-block"
+        = link_to 'Back', users_path, class: "btn btn-secondary-outline btn-block"
       .col-xs-6
         = f.submit "Submit", class: "btn btn-primary-outline btn-block"

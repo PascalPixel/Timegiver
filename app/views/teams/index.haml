@@ -6,11 +6,11 @@
           .pull-left
             %ol.breadcrumb
               %li.active
-                %span.fa.fa-user-secret
-                Admin
+                %span.fa.fa-users
+                Teams
           .pull-right
-            - if current_user.admin == true
-              = link_to 'New', new_admin_team_path, class: 'btn btn-primary-outline'
+            -# if current_user.admin == true
+            = link_to 'New', new_team_path, class: 'btn btn-primary-outline'
 
         .card-block
           %table.table
@@ -23,6 +23,6 @@
               - @teams.each do |team|
                 %tr{id: dom_id(team)}
                   %td
-                    %b= link_to team.company_name, admin_team_path(team), style: "color:##{team.color}"
+                    %b= link_to team.company_name, team_path(team), style: "color:##{team.color}"
                     %br
                     = team.description

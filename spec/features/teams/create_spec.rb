@@ -118,7 +118,7 @@ describe "Creating teams" do
     options[:currency] ||= "USD"
     options[:color] ||= "00AAFF"
 
-    visit new_admin_team_path
+    visit new_team_path
 
     fill_in "Company name", with: options[:company_name]
     fill_in "Description", with: options[:description]
