@@ -33,7 +33,6 @@ gem 'bootbox-rails', '~> 0.5.0' # Fancy Bootstrap alerts
 # Vendor
 gem 'jquery-rails', '~> 4.2.1' # jQuery, super handy
 gem 'bootstrap', '~> 4.0.x' # Bootstrap 4 for layout
-gem 'font-awesome-rails', '~> 4.6.3.0' # Icon font
 gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
 
 # Bower

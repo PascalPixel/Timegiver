@@ -3,26 +3,27 @@
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
-          .pull-left
+          .pull-sm-left
             %ol.breadcrumb
               %li.breadcrumb-item.active
-                %span.fa.fa-users
+                %i.material-icons group
                 Teams
-          .pull-right
+          .pull-sm-right
             -# if current_user.admin == true
-            = link_to 'New', new_team_path, class: 'btn btn-primary'
+            = link_to content_tag(:i, 'group_add', class: 'material-icons') + ' New', new_team_path, class: 'btn btn-primary'
 
         .card-block
           %table.table
             %thead
               %tr
                 %th
-                  %span.fa.fa-user
-                  Team
+                  Name
+                %th
+                  Description
             %tbody
               - @teams.each do |team|
                 %tr{id: dom_id(team)}
                   %td
                     %b= link_to team.team_name, team_path(team), style: "color:##{team.color}"
-                    %br
+                  %td
                     = team.description

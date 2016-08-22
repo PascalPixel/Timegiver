@@ -192,7 +192,7 @@ $display4-weight: 300 !default;
 
 $headings-margin-bottom: ($spacer / 2) !default;
 $headings-font-family:   inherit !default;
-$headings-font-weight:   500 !default;
+$headings-font-weight:   700;
 $headings-line-height:   1.1 !default;
 $headings-color:         inherit !default;
 
@@ -441,9 +441,9 @@ $dropdown-min-width:             160px !default;
 $dropdown-padding-y:             5px !default;
 $dropdown-margin-top:            2px !default;
 $dropdown-bg:                    $gray-lightest;
-$dropdown-border-color:          $gray-light !default;
+$dropdown-border-color:          $gray-lightest;
 $dropdown-border-width:          $border-width !default;
-$dropdown-divider-bg:            $gray-light !default;
+$dropdown-divider-bg:            $gray-lightest;
 $dropdown-box-shadow:            0 6px 12px rgba(0,0,0,.175) !default;
 
 $dropdown-link-color:            $gray-dark !default;

@@ -2,11 +2,12 @@
   .col-sm-8.offset-sm-2
     .card
       .card-header
-        %h3
+        %h5
           Welcome
           = @email
           !
 
-      %p You can confirm your account email through the link below:
+      .card-block
+        %p You can confirm your account email through the link below:
 
-      %p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+        %p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)

@@ -3,18 +3,14 @@
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
-          .pull-left
+          .pull-sm-left
             %ol.breadcrumb
-              %li.breadcrumb-item
-                = link_to teams_path do
-                  %span.fa.fa-users
-                  Teams
               %li.breadcrumb-item.active
-                %span.fa.fa-users
+                %i.material-icons group
                 Users
-          .pull-right
+          .pull-sm-right
             -# if current_user.admin == true
-            = link_to 'New', new_user_path, class: 'btn btn-primary'
+            = link_to content_tag(:i, 'person_add', class: 'material-icons') + ' Add', new_user_path, class: 'btn btn-primary'
 
         .card-block
           %table.table
@@ -31,9 +27,9 @@
                     = link_to user.email, user_path(user)
                   %td
                     - if user.admin
-                      Yes
+                      %i.material-icons check
                     - else
-                      No
+                      %i.material-icons clear
                   %td.text-xs-right
                     -# if current_user.admin == true
                     = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'

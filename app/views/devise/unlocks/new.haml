@@ -2,16 +2,17 @@
   .col-sm-8.offset-sm-2
     .card
       .card-header
-        %h3 Resend unlock instructions
+        %h5 Resend unlock instructions
 
-      = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
-        = f.error_notification
-        = f.full_error :unlock_token
+      .card-block
+        = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
+          = f.error_notification
+          = f.full_error :unlock_token
 
-        .form-inputs
-          = f.input :email, required: true, autofocus: true
+          .form-inputs
+            = f.input :email, required: true, autofocus: true
 
-        .form-actions
-          = f.button :submit, "Resend unlock instructions"
+          .form-actions
+            = f.button :submit, "Resend unlock instructions"
 
-      = render "devise/shared/links"
+        = render "devise/shared/links"

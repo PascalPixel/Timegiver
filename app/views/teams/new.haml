@@ -3,14 +3,16 @@
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
-          .pull-left
+          .pull-sm-left
             %ol.breadcrumb
               %li.breadcrumb-item
                 = link_to teams_path do
-                  %span.fa.fa-users
+                  %i.material-icons group
                   Teams
-              %li.breadcrumb-item.active New
-          .pull-right
+              %li.breadcrumb-item.active
+                %i.material-icons group_add
+                New
+          .pull-sm-right
             = link_to 'Cancel', teams_path, class: 'btn btn-secondary'
 
         = render 'form'

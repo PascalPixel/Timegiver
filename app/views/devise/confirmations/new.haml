@@ -1,13 +1,18 @@
-%h2 Resend confirmation instructions
+.container
+  .col-sm-8.offset-sm-2
+    .card
+      .card-header
+        %h5 Resend confirmation instructions
 
-= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-  = f.error_notification
-  = f.full_error :confirmation_token
+      .card-block
+        = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
+          = f.error_notification
+          = f.full_error :confirmation_token
 
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
+          .form-inputs
+            = f.input :email, required: true, autofocus: true
 
-  .form-actions
-    = f.button :submit, "Resend confirmation instructions"
+          .form-actions
+            = f.button :submit, "Resend confirmation instructions"
 
-= render "devise/shared/links"
+        = render "devise/shared/links"
