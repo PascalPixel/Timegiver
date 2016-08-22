@@ -2,7 +2,7 @@
   %button.navbar-toggler.hidden-md-up.pull-xs-right{'data-target' => '#collapsenav', 'data-toggle' => 'collapse', :type => 'button'}
     ☰
   = link_to root_url, class: 'navbar-brand' do
-    %i.material-icons timelapse
+    %i.material-icons hourglass_empty
     = t('.name')
   #collapsenav.collapse.navbar-toggleable-sm.pull-xs-left.pull-md-none
     %ul.nav.navbar-nav.pull-md-right
@@ -13,7 +13,7 @@
             %i.material-icons translate
             Language
           .dropdown-menu{"aria-labelledby" => "languageDropdown"}
-            - regions = ['en', 'ja']
+            - regions = ['ja', 'de', 'nl', 'en']
             - regions.each do |lan|
               %button.dropdown-item{:type => "button"}
                 = link_to t('language', locale: lan), current_path_new_locale(lan.to_sym)

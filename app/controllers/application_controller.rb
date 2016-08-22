@@ -19,9 +19,13 @@ class ApplicationController < ActionController::Base
     case new_locale
     when :ja
       locale = '/ja'
+    when :de
+      locale = '/de'
+    when :nl
+      locale = '/nl'
     else
       locale = '/en'
     end
-    request.path.sub(/\/(ja|en)/, locale)
+    request.path.sub(/\/(ja|de|nl|en)/, locale)
   end
 end

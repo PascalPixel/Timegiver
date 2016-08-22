@@ -1,0 +1,10 @@
+nl:
+  language: Nederlands
+  shared:
+    navbar:
+      name: Tijdgever
+      menuitem: Artikel
+  welcomes:
+    index:
+      header: Houd remote teams bij
+      subheader: Plan vergaderingen, bekijk locaties, geen verwarring over tijdzones meer.

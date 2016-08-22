@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Scope manages languages
-  scope "/:locale", locale: /en|ja/ do
+  scope "/:locale", locale: /ja|de|nl|en/ do
 
     # Devise
     devise_for :users
@@ -26,5 +26,5 @@ Rails.application.routes.draw do
 
   # Redirect to language
   root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
-  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(en|ja)\/).*/}, format: false
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(ja|de|nl|en)\/).*/}, format: false
 end

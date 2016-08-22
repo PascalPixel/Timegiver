@@ -13,6 +13,7 @@ gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
 
 # Authentication
 gem 'devise', '~> 4.2.0' # Users! Everywhere!
+gem 'devise-i18n', '~> 1.1.0' # Translations for users
 
 # Precompilers
 gem 'haml-rails', '~> 0.9.0' # HAML to HTML

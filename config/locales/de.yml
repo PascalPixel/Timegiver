@@ -1,9 +1,9 @@
-en:
-  language: English
+de:
+  language: Deutsch
   shared:
     navbar:
-      name: Timegiver
-      menuitem: Item
+      name: Zeitgeber
+      menuitem: Artikel
   welcomes:
     index:
       header: Keep track of remote teams
