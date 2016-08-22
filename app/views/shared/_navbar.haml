@@ -1,15 +1,20 @@
 %nav.navbar.navbar-full
-  %button.navbar-toggler.hidden-md-up.pull-xs-right{"data-target" => "#collapsenav", "data-toggle" => "collapse", :type => "button"}
+  %button.navbar-toggler.hidden-md-up.pull-xs-right{'data-target' => '#collapsenav', 'data-toggle' => 'collapse', :type => 'button'}
     ☰
   = link_to root_url, class: 'navbar-brand' do
     = t('.name')
   #collapsenav.collapse.navbar-toggleable-sm.pull-xs-left.pull-md-none
     %ul.nav.navbar-nav.pull-md-right
+      -# Language selector
       %li.nav-item.pull-xs-none.pull-md-left
-        - if I18n.locale == :en
-          = link_to content_tag(:span, '', class: 'fa fa-globe') + ' 日本語', current_path_new_locale('ja'.to_sym), class: 'nav-link'
-        - else
-          = link_to content_tag(:span, '', class: 'fa fa-globe') + ' English', current_path_new_locale('en'.to_sym), class: 'nav-link'
+        .dropdown
+          .nav-link#languageDropdown.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+            %span.fa.fa-globe
+          .dropdown-menu{"aria-labelledby" => "languageDropdown"}
+            - regions = ['en', 'ja']
+            - regions.each do |lan|
+              %button.dropdown-item{:type => "button"}
+                = link_to t('language', locale: lan), current_path_new_locale(lan.to_sym)
 
       - if user_signed_in?
         %li.nav-item.pull-xs-none.pull-md-left
