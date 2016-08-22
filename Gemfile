@@ -10,8 +10,7 @@ gem 'rails-i18n', '~> 5.x' # Show different languages
 gem 'pg', '~> 0.18.4' # Postgres databases are cool
 gem 'turbolinks', '~> 5.x' # BETA Only reload page content
 gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
-gem 'react-rails', '~> 1.7.1' # React for the future of the human race
-# gem "react_on_rails", "~> 5"
+
 
 # Authentication
 gem 'devise', '~> 4.1.1' # Users! Everywhere!
