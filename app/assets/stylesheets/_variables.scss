@@ -48,7 +48,7 @@ $gray-light:                desaturate(lighten($navy, 20%), 50%);
 $gray-lighter:              desaturate(lighten($navy, 5%), 20%);
 $gray-lightest:             $navy;
 
-$brand-primary:             saturate($gray-light, 30%);
+$brand-primary:             darken($purple, 20%);
 $brand-success:             $green;
 $brand-info:                $aqua;
 $brand-warning:             $yellow;
