@@ -1,6 +1,6 @@
 .container
   .row
-    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
           .pull-left
@@ -12,7 +12,7 @@
               %li= link_to @team.team_name, team_path(@team), style: "color:##{@team.color}"
               %li.active Edit
           .pull-right
-            = link_to 'Add User', users_path, class: 'btn btn-secondary-outline'
-            = link_to 'Cancel', team_path(@team), class: 'btn btn-secondary-outline'
+            = link_to 'Add User', users_path, class: 'btn btn-outline-secondary'
+            = link_to 'Cancel', team_path(@team), class: 'btn btn-outline-secondary'
 
         = render 'form'

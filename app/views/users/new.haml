@@ -1,6 +1,6 @@
 .container
   .row
-    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
           .pull-left
@@ -15,6 +15,6 @@
                   Users
               %li.active New
           .pull-right
-            = link_to 'Cancel', users_path(team_id: @team), class: 'btn btn-secondary-outline'
+            = link_to 'Cancel', users_path(team_id: @team), class: 'btn btn-outline-secondary'
 
         = render partial: "form"

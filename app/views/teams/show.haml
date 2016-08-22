@@ -1,6 +1,6 @@
 .container
   .row
-    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
           .pull-left
@@ -12,8 +12,8 @@
               %li.active{style: "color:##{@team.color}"}= @team.team_name
           .pull-right
             -# if current_user.admin == true
-            = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary-outline'
-            = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
+            = link_to 'Edit', edit_team_path(@team), class: 'btn btn-outline-secondary'
+            = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
         %ul.list-group.list-group-flush
           %li.list-group-item

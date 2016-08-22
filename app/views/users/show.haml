@@ -1,6 +1,6 @@
 .container
   .row
-    .col-lg-8.col-lg-offset-2.col-md-10.col-md-offset-1
+    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
           .pull-left
@@ -18,8 +18,8 @@
                 = @user.id
           .pull-right
             -# if current_user.admin == true
-            = link_to 'Edit', edit_user_path(@user), class: 'btn btn-secondary-outline'
-            = link_to 'Delete', user_path(@user), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
+            = link_to 'Edit', edit_user_path(@user), class: 'btn btn-outline-secondary'
+            = link_to 'Delete', user_path(@user), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
         .card-block
           %dl
