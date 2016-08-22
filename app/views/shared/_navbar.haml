@@ -21,10 +21,6 @@
         %li.nav-item.pull-xs-none.pull-md-left
           = link_to content_tag(:span, '', class: 'fa fa-users') + ' Teams', teams_path, class: 'nav-link'
 
-        - if current_user.admin
-          %li.nav-item.pull-xs-none.pull-md-left
-            = link_to content_tag(:span, '', class: 'fa fa-users') + ' Users', users_path, class: 'nav-link'
-
         %li.nav-item.pull-xs-none.pull-md-left
           = link_to content_tag(:span, '', class: 'fa fa-sign-out') + ' Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link'
 

@@ -7,8 +7,8 @@
             %ol.breadcrumb
               %li
                 = link_to teams_path do
-                  %span.fa.fa-user-secret
-                  Admin
+                  %span.fa.fa-users
+                  Teams
               %li
                 = link_to users_path(team_id: @team) do
                   %span.fa.fa-group
@@ -17,9 +17,9 @@
                 %span.fa.fa-user
                 = @user.id
           .pull-right
-            - if current_user.admin == true
-              = link_to 'Edit', edit_user_path(@user), class: 'btn btn-secondary-outline'
-              = link_to 'Delete', user_path(@user), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
+            -# if current_user.admin == true
+            = link_to 'Edit', edit_user_path(@user), class: 'btn btn-secondary-outline'
+            = link_to 'Delete', user_path(@user), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
 
         .card-block
           %dl

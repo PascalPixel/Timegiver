@@ -20,7 +20,7 @@ Team.create!([
     rate: "6",
     currency_sign: "🐟",
     currency: "USD",
-    company_name: "Salmon,
+    team_name: "Salmon,
     Inc.",
     street_address_1: "Fishlane 88",
     street_address_2: "Aquarium 1",

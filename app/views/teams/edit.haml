@@ -7,11 +7,12 @@
             %ol.breadcrumb
               %li
                 = link_to teams_path do
-                  %span.fa.fa-user-secret
-                  Admin
-              %li= link_to @team.company_name, team_path(@team), style: "color:##{@team.color}"
+                  %span.fa.fa-users
+                  Teams
+              %li= link_to @team.team_name, team_path(@team), style: "color:##{@team.color}"
               %li.active Edit
           .pull-right
+            = link_to 'Add User', users_path, class: 'btn btn-secondary-outline'
             = link_to 'Cancel', team_path(@team), class: 'btn btn-secondary-outline'
 
         = render 'form'

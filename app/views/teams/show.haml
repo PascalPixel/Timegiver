@@ -7,22 +7,22 @@
             %ol.breadcrumb
               %li
                 = link_to teams_path do
-                  %span.fa.fa-user-secret
-                  Admin
-              %li.active{style: "color:##{@team.color}"}= @team.company_name
+                  %span.fa.fa-users
+                  Teams
+              %li.active{style: "color:##{@team.color}"}= @team.team_name
           .pull-right
-            - if current_user.admin == true
-              = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary-outline'
-              = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
+            -# if current_user.admin == true
+            = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary-outline'
+            = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger-outline'
 
         %ul.list-group.list-group-flush
           %li.list-group-item
             .row
               .col-sm-6
-                %h5 Company
+                %h5 Team
                 %dl
-                  %dt Company name
-                  %dd= @team.company_name
+                  %dt Team name
+                  %dd= @team.team_name
                   %dt Description
                   %dd= @team.description
                   %dt Color
@@ -73,10 +73,10 @@
                   %dt Currency
                   %dd= @team.currency
 
-          - if current_user.admin == true
-            %li.list-group-item
-              .row
-                .col-sm-6
-                  %h5 Users
-                  %dl
-                    = @team.users.order(:email).map { |u| u.email.split('@').first }.join(', ')
+          -# if current_user.admin == true
+          %li.list-group-item
+            .row
+              .col-sm-6
+                %h5 Users
+                %dl
+                  = @team.users.order(:email).map { |u| u.email.split('@').first }.join(', ')
