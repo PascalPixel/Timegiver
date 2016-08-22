@@ -1,17 +1,14 @@
 .container
   .col-sm-8.offset-sm-2
     .card
-      .card-header
-        %h5 Forgot your password?
-
+      %h5.card-header
+        %i.material-icons fingerprint
+        = t(".forgot_your_password")
       .card-block
         = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
           = f.error_notification
-
           .form-inputs
             = f.input :email, required: true, autofocus: true
-
           .form-actions
-            = f.button :submit, "Send me reset password instructions"
-
+            = f.button :submit, t(".send_me_reset_password_instructions")
         = render "devise/shared/links"

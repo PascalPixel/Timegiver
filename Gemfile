@@ -6,9 +6,9 @@ gem 'bundler', '>= 1.8.4'
 # Rails
 gem 'rails', '~> 5.0.0' # Ruby on Rails
 gem 'puma', '~> 3.6.0' # Faster local server
-gem 'rails-i18n', '~> 5.x' # Show different languages
+gem 'rails-i18n', '~> 5.0.0' # Show different languages
 gem 'pg', '~> 0.18.4' # Postgres databases are cool
-gem 'turbolinks', '~> 5.x' # Only reload page content
+gem 'turbolinks', '~> 5.0.0' # Only reload page content
 gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
 
 # Authentication
@@ -33,7 +33,7 @@ gem 'bootbox-rails', '~> 0.5.0' # Fancy Bootstrap alerts
 
 # Vendor
 gem 'jquery-rails', '~> 4.2.1' # jQuery, super handy
-gem 'bootstrap', '~> 4.0.x' # Bootstrap 4 for layout
+gem 'bootstrap', '~> 4.0.0.alpha3.1' # Bootstrap 4 for layout
 gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
 
 # Bower

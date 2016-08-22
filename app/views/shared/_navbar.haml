@@ -1,6 +1,6 @@
 %nav.navbar.navbar-fixed-top
   %button.navbar-toggler.hidden-md-up.pull-xs-right{'data-target' => '#collapsenav', 'data-toggle' => 'collapse', :type => 'button'}
-    ☰
+    %i.material-icons menu
   = link_to root_url, class: 'navbar-brand' do
     %i.material-icons hourglass_empty
     = t('.name')
@@ -9,13 +9,13 @@
       -# Language selector
       %li.nav-item.pull-xs-none.pull-md-left
         .dropdown
-          %button.btn.btn-secondary#languageDropdown.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+          %button.btn.btn-secondary#languageDropdown.dropdown-toggle{'aria-expanded' => 'false', 'aria-haspopup' => 'true', 'data-toggle' => 'dropdown', :type => 'button'}
             %i.material-icons translate
             Language
-          .dropdown-menu{"aria-labelledby" => "languageDropdown"}
+          .dropdown-menu{'aria-labelledby' => 'languageDropdown'}
             - regions = ['ja', 'de', 'nl', 'en']
             - regions.each do |lan|
-              %button.dropdown-item{:type => "button"}
+              %button.dropdown-item{:type => 'button'}
                 = link_to t('language', locale: lan), current_path_new_locale(lan.to_sym)
 
       - if user_signed_in?
@@ -30,6 +30,6 @@
 
       - else
         %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, 'input', class: 'material-icons') + ' Login', new_user_session_path, class: 'nav-link'
+          = link_to content_tag(:i, 'exit_to_app', class: 'material-icons') + t('devise.shared.links.sign_in'), new_user_session_path, class: 'nav-link'
         %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, 'edit', class: 'material-icons') + ' Register', new_user_registration_path, class: 'nav-link'
+          = link_to content_tag(:i, 'edit', class: 'material-icons') + t('devise.shared.links.sign_up'), new_user_registration_path, class: 'nav-link'
