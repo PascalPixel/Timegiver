@@ -10,12 +10,6 @@
             = f.input :email, required: false, autofocus: true
             = f.input :password, required: false
             = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-
-            %label.custom-control.custom-checkbox
-              %input.custom-control-input{:type => "checkbox"}/
-              %span.custom-control-indicator
-              %span.custom-control-description Check this custom checkbox
-
           .form-actions
             = f.button :submit, t(".sign_in")
         = render "devise/shared/links"

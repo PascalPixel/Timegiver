@@ -5,23 +5,35 @@ body
   background: linear-gradient(180deg, darken($gray-lightest, 3%), darken($purple, 20%))
   background-repeat: no-repeat
   background-attachment: fixed
-  padding-top: 6rem
+  font-weight: 200
+
+// Sticky footer
+.wrapper
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  margin: 0 auto -5.5rem
+  padding-top: 7rem
+.footer,
+.push
+  height: 2.5rem
 
 ::selection
   background: $brand-primary
   color: $gray-dark
 
+[type="checkbox"],
+[type="radio"]
+  margin-right: .5em
+
 .mdi:before,
 .mdi-set
   font-size: 1em
 
-h1, h2, h3, h4, h5, h6
-  font-weight: 600
-
 img
   max-width: 100%
 
-.navbar-fixed-top,
+// .navbar-fixed-top,
 .card-header
   background: linear-gradient(180deg, lighten($gray-lightest, 2%), $gray-lightest)
   border-top-color: lighten($gray-lightest, 10%)

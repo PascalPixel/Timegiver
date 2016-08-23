@@ -185,19 +185,19 @@ $display2-size: 5.5rem !default;
 $display3-size: 4.5rem !default;
 $display4-size: 3.5rem !default;
 
-$display1-weight: 300 !default;
-$display2-weight: 300 !default;
-$display3-weight: 300 !default;
-$display4-weight: 300 !default;
+$display1-weight: 200;
+$display2-weight: 200;
+$display3-weight: 200;
+$display4-weight: 200;
 
 $headings-margin-bottom: ($spacer / 2) !default;
 $headings-font-family:   inherit !default;
-$headings-font-weight:   700;
+$headings-font-weight:   200;
 $headings-line-height:   1.1 !default;
 $headings-color:         inherit !default;
 
 $lead-font-size:   1.25rem !default;
-$lead-font-weight: 300 !default;
+$lead-font-weight: 200;
 
 $small-font-size: 80% !default;
 
@@ -215,10 +215,10 @@ $hr-border-width: $border-width !default;
 
 $mark-padding: .2em !default;
 
-$dt-font-weight: bold !default;
+$dt-font-weight: 200;
 
 $kbd-box-shadow:         inset 0 -.1rem 0 rgba(0,0,0,.25) !default;
-$nested-kbd-font-weight: bold !default;
+$nested-kbd-font-weight: 200;
 
 $list-inline-padding: 5px !default;
 
@@ -264,7 +264,7 @@ $table-border-color:            $gray-lighter !default;
 $btn-padding-x:                  1rem !default;
 $btn-padding-y:                  .5rem !default;
 $btn-line-height:                1.25 !default;
-$btn-font-weight:                700;
+$btn-font-weight:                200;
 $btn-box-shadow:                 inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075) !default;
 $btn-active-box-shadow:          inset 0 3px 5px rgba(0,0,0,.125) !default;
 
@@ -643,7 +643,7 @@ $tag-danger-bg:             $brand-danger !default;
 $tag-color:                 $gray-dark;
 $tag-link-hover-color:      $gray-dark;
 $tag-font-size:             75% !default;
-$tag-font-weight:           bold !default;
+$tag-font-weight:           200;
 $tag-padding-x:             .4em !default;
 $tag-padding-y:             .25em !default;
 
@@ -687,7 +687,7 @@ $modal-sm:                    300px !default;
 
 $alert-padding:               15px !default;
 $alert-border-radius:         $border-radius !default;
-$alert-link-font-weight:      bold !default;
+$alert-link-font-weight:      200;
 $alert-border-width:          $border-width !default;
 
 $alert-success-bg:            $state-success-bg !default;
@@ -807,7 +807,7 @@ $carousel-icon-width:                         20px !default;
 
 // Close
 
-$close-font-weight:           bold !default;
+$close-font-weight:           200;
 $close-color:                 #000 !default;
 $close-text-shadow:           0 1px 0 $gray-dark;
 
