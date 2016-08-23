@@ -40,6 +40,7 @@ gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0' # Needed for Bootstrap 4 Tooltips and Popovers
   gem 'rails-assets-chosen', '~> 1.6.2' # Beautiful Select dropdowns
+  gem 'rails-assets-animate.css', '~> 3.5.2' # CSS Animations
 end
 
 # Docs

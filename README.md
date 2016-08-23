@@ -1,28 +1,18 @@
-![Superpencil](https://dl.dropboxusercontent.com/u/898312/logo.png)
+![Timegiver](https://www.dropbox.com/s/o4dz019l4yfs2ud/Screenshot%202016-08-23%2021.51.18.png?dl=0)
 
 #### Description
-Superpencil Stack has all the basics for our apps.
+Timegiver is an open-source app to track a remote team.
 
 Web: [www.superpencil.com](http://www.superpencil.com)
-Github: [@Superpencil](http://github.com/Superpencil)
+Github: [Superpencil/Zeitgeber](http://github.com/Superpencil/Zeitgeber)
 
 #### Authors
-(In order of appearance)
 [@PascalPencil](http://github.com/pascalpencil)
 [@curly-coder](http://github.com/curly-coder)
 [@mvaneyken](http://github.com/mvaneyken)
 [@cfavreau](http://github.com/cfavreau)
 
-#### Codestyle
-- Style guide by Bootstrap maintainer @mdo for HTML and CSS http://codeguide.co
-- Use 'title' html attributes for test elements to click
-- Use .haml, .sass, .coffeescript, .rb
-- 2 spaces indentation or you Yoko Ono us all
-- Use Atom editor for automatic formatting of your code
-- Always try to use Bootstrap elements and styles to accomplish what you want, with adjustments based on the situation
-- Care about the planet; don't eat beef, buy an electric car, install solar panels on your house, thanks.
-
-#### Setup on El Capitan
+#### Setup on macOS
 1. Download this repo and cd to the folder in Terminal.
 2. `xcode-select --install`
 3. `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
