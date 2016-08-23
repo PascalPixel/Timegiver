@@ -6,11 +6,11 @@
           .pull-sm-left
             %ol.breadcrumb
               %li.breadcrumb-item.active
-                %i.material-icons group
+                %i.mdi.mdi-account
                 Users
           .pull-sm-right
             -# if current_user.admin == true
-            = link_to content_tag(:i, 'person_add', class: 'material-icons') + ' Add', new_user_path, class: 'btn btn-primary'
+            = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'btn btn-primary'
 
         .card-block
           %table.table
@@ -27,9 +27,9 @@
                     = link_to user.email, user_path(user)
                   %td
                     - if user.admin
-                      %i.material-icons check
+                      %i.mdi.mdi-check
                     - else
-                      %i.material-icons clear
+                      %i.mdi.mdi-clear
                   %td.text-xs-right
                     -# if current_user.admin == true
                     = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'

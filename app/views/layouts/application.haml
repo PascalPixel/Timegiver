@@ -38,7 +38,7 @@
 
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
 
-  %body.p-t-3.m-t-3{id: params[:controller], class: params[:action]}
+  %body{id: params[:controller], class: params[:action]}
     = render partial: 'shared/navbar'
     = render partial: 'shared/flash'
 
