@@ -8,4 +8,8 @@ class User < ApplicationRecord
   def team_list
     self.teams
   end
+
+  def admin?(team)
+    self.team_users(team: team, admin: true).present?
+  end
 end

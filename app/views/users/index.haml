@@ -28,10 +28,10 @@
                       = user.first_name
                       = user.last_name
                   %td
-                    - if self.team_user.admin
-                      %i.mdi.mdi-check
-                    - else
-                      %i.mdi.mdi-close
+                    -# - if user.admin?(@team)
+                    -#   %i.mdi.mdi-check
+                    -# - else
+                    -#   %i.mdi.mdi-close
                   %td.text-xs-right
                     -# if current_user.admin == true
                     = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'

@@ -11,9 +11,9 @@
                   Teams
               %li.breadcrumb-item.active{style: "color:##{@team.color}"}= @team.team_name
           .pull-sm-right
-            -# if current_user.admin == true
-            = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
-            = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+            - if current_user.admin?(@team)
+              = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
+              = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
         %ul.list-group.list-group-flush
           %li.list-group-item

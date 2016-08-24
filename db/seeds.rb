@@ -83,6 +83,6 @@ end
   user = User.find_by_email(tu[:email])
   team = Team.find_by_team_name(tu[:team_name])
   if user && team
-    team.team_users.create(user: user)
+    team.team_users.create({user: user, admin: tu[:admin]})
   end
 end
