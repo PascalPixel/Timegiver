@@ -4,7 +4,7 @@
 Timegiver is an open-source app to track a remote team.
 
 Web: [www.superpencil.com](http://www.superpencil.com)
-Github: [Superpencil/Zeitgeber](http://github.com/Superpencil/Zeitgeber)
+Github: [Superpencil/Timegiver](http://github.com/Superpencil/Timegiver)
 
 #### Authors
 [@PascalPencil](http://github.com/pascalpencil)
@@ -25,5 +25,5 @@ Github: [Superpencil/Zeitgeber](http://github.com/Superpencil/Zeitgeber)
 10. `launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist`
 11. `bundle install`
 12. `rails db:setup && rails db:migrate`
-13. `bundle exec puma` to run the server
+13. `bundle exec rails s` to run the server
 14. Navigate to localhost:3333 in your browser.

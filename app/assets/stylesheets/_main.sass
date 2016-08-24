@@ -2,7 +2,7 @@ html, body
   height: 100%
 
 body
-  background: linear-gradient(180deg, darken($gray-lightest, 3%), darken($purple, 20%))
+  background: linear-gradient(0deg, darken($purple, 20%), darken($gray-lightest, 3%))
   background-repeat: no-repeat
   background-attachment: fixed
   font-weight: 200
@@ -14,15 +14,17 @@ body
   height: 100%
   margin: 0 auto -5.5rem
   padding-top: 7rem
+
 .footer,
 .push
   height: 2.5rem
 
 #flash
   position: fixed
-  bottom: 0
+  top: 1rem
   left: 1rem
   right: 1rem
+  z-index: 9999
 
 .delay
   transition-delay: 1s
@@ -42,11 +44,11 @@ body
 img
   max-width: 100%
 
-// .navbar-fixed-top,
+.navbar-fixed-top,
 .card-header
   background: linear-gradient(180deg, lighten($gray-lightest, 2%), $gray-lightest)
   border-top-color: lighten($gray-lightest, 10%)
-  border-bottom-color: darken($gray-lightest, 10%)
+  border-bottom-color: darken($gray-lightest, 3%)
 
 .breadcrumb
   margin-bottom: 0rem
@@ -66,30 +68,35 @@ img
   background: linear-gradient(180deg, lighten($brand-primary, 2%), $brand-primary)
   border-top-color: lighten($brand-primary, 10%)
   border-bottom-color: darken($brand-primary, 10%)
+
 .btn-secondary
   border-left: none
   border-right: none
   background: linear-gradient(180deg, lighten($gray-lighter, 2%), $gray-lighter)
   border-top-color: lighten($gray-lighter, 10%)
-  border-bottom-color: darken($gray-lighter, 10%)
+  border-bottom-color: darken($gray-lighter, 3%)
+
 .btn-info
   border-left: none
   border-right: none
   background: linear-gradient(180deg, lighten($brand-info, 2%), $brand-info)
   border-top-color: lighten($brand-info, 10%)
   border-bottom-color: darken($brand-info, 10%)
+
 .btn-success
   border-left: none
   border-right: none
   background: linear-gradient(180deg, lighten($brand-success, 2%), $brand-success)
   border-top-color: lighten($brand-success, 10%)
   border-bottom-color: darken($brand-success, 10%)
+
 .btn-warning
   border-left: none
   border-right: none
   background: linear-gradient(180deg, lighten($brand-warning, 2%), $brand-warning)
   border-top-color: lighten($brand-warning, 10%)
   border-bottom-color: darken($brand-warning, 10%)
+
 .btn-danger
   border-left: none
   border-right: none
