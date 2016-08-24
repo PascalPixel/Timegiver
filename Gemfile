@@ -15,6 +15,8 @@ gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
 gem 'devise', '~> 4.2.0' # Users! Everywhere!
 gem 'devise-i18n', '~> 1.1.0' # Translations for users
 
+gem "paperclip", "~> 5.0.0" # For Avatars
+
 # Precompilers
 gem 'haml-rails', '~> 0.9.0' # HAML to HTML
 gem 'sass-rails', '~> 5.0.4' # Sass to CSS

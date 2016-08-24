@@ -49,4 +49,7 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  # Let Paperclip access ImageMagick
+  Paperclip.options[:command_path] = "/usr/local/bin/convert"
+
 end
