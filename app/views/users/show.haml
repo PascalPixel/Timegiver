@@ -10,7 +10,8 @@
                   %i.mdi.mdi-account
                   Users
               %li.breadcrumb-item.active
-                = @user.id
+                = @user.first_name
+                = @user.last_name
           .pull-sm-right
             -# if current_user.admin == true
             = link_to 'Edit', edit_user_path(@user), class: 'btn btn-secondary'
@@ -18,6 +19,10 @@
 
         .card-block
           %dl
+            %dt First name
+            %dd= @user.first_name
+            %dt Last name
+            %dd= @user.last_name
             %dt Email
             %dd= @user.email
             %dt Admin

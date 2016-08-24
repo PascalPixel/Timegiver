@@ -6,9 +6,17 @@
           .alert.alert-danger= msg
 
     %p
+      = f.label :first_name
+      %br
+      = f.text_field :first_name, class: "form-control", autofocus: true
+    %p
+      = f.label :last_name
+      %br
+      = f.text_field :last_name, class: "form-control"
+    %p
       = f.label :email
       %br
-      = f.text_field :email, class: "form-control", autofocus: true
+      = f.text_field :email, class: "form-control"
     %p
       = f.check_box :admin
       = label_tag :admin

@@ -24,7 +24,9 @@
               - @users.each do |user|
                 %tr{id: dom_id(user)}
                   %td
-                    = link_to user.email, user_path(user)
+                    = link_to user_path(user) do
+                      = user.first_name
+                      = user.last_name
                   %td
                     - if user.admin
                       %i.mdi.mdi-check

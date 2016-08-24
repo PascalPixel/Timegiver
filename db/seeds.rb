@@ -1,7 +1,21 @@
 # Users
 [
-  {email: 'admin@superpencil.com', password: 'password', password_confirmation: 'password', admin: true },
-  {email: 'regular@superpencil.com', password: 'password', password_confirmation: 'password', admin: false }
+  {
+    first_name: 'Alice'
+    last_name: 'Edge'
+    email: 'admin@superpencil.com',
+    password: 'password',
+    password_confirmation: 'password',
+    admin: true
+  },
+  {
+    first_name: 'Taku'
+    last_name: 'Otaku'
+    email: 'regular@superpencil.com',
+    password: 'password',
+    password_confirmation: 'password',
+    admin: false
+  }
 ].each do |u|
   user = User.find_by_email(u[:email])
   unless user
