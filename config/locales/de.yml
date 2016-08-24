@@ -3,7 +3,9 @@ de:
   shared:
     navbar:
       name: Zeitgeber
-      menuitem: Artikel
+      teams: Teams
+      users: Users
+      sign_out: Sign Out
   welcomes:
     index:
       header: Verwalten Remote Teams
