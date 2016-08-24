@@ -3,7 +3,9 @@ nl:
   shared:
     navbar:
       name: Tijdgever
-      menuitem: Artikel
+      teams: Teams
+      users: Gebruikers
+      sign_out: Uitloggen
   welcomes:
     index:
       header: Houd remote teams bij

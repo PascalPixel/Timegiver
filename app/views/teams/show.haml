@@ -11,72 +11,35 @@
                   Teams
               %li.breadcrumb-item.active{style: "color:##{@team.color}"}= @team.team_name
           .pull-sm-right
-            -# if current_user.admin == true
-            = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
-            = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+            - if current_user.admin?(@team)
+              = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
+              = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
         %ul.list-group.list-group-flush
           %li.list-group-item
             .row
               .col-sm-6
-                %h5 Team
-                %dl
-                  %dt Team name
-                  %dd= @team.team_name
-                  %dt Description
-                  %dd= @team.description
-                  %dt Color
-                  %dd
-                    .team-color
-                      %span> #
-                      = @team.color
-                    :scss
-                      .team-color {
-                        background: ##{@team.color};
-                        color: darken(##{@team.color}, 20%);
-                        padding: 5px 8px;
-                        border-radius: 5px;
-                        display: inline-block;
-                      }
-              .col-sm-6
-                %h5 Contact
-                %dl
-                  %dt Last name
-                  %dd= @team.last_name
-                  %dt First name
-                  %dd= @team.first_name
-                  %dt Title
-                  %dd= @team.title
+                %h1.team-color{style: "color:##{@team.color}"}
+                  = @team.team_name
+                %p= @team.description
+                %p
+                  = @team.street_address_1
+                  %br
+                  = @team.street_address_2
+                  %br
+                  = @team.postal
+                  = @team.city
+                  %br
+                  = @team.country
 
-          %li.list-group-item
-            .row
               .col-sm-6
-                %h5 Address
+                %h4 Users
                 %dl
-                  %dt Street address 1
-                  %dd= @team.street_address_1
-                  %dt Street address 2
-                  %dd= @team.street_address_2
-                  %dt Postal
-                  %dd= @team.postal
-                  %dt City
-                  %dd= @team.city
-                  %dt Country
-                  %dd= @team.country
-              .col-sm-6
-                %h5 Accounting
-                %dl
-                  %dt Rate
-                  %dd= @team.rate
-                  %dt Currency sign
-                  %dd= @team.currency_sign
-                  %dt Currency
-                  %dd= @team.currency
-
-          -# if current_user.admin == true
-          %li.list-group-item
-            .row
-              .col-sm-6
-                %h5 Users
-                %dl
-                  = @team.users.order(:email).map { |u| u.email.split('@').first }.join(', ')
+                  - @team.users.each do |user|
+                    = link_to user do
+                      %h6
+                        = image_tag 'placeholder.png', class: 'avatar avatar-inline'
+                        = user.first_name
+                        = user.last_name
+                        - if user.admin?(@team)
+                          %i.mdi.mdi-star

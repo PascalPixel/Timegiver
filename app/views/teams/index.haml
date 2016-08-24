@@ -9,7 +9,6 @@
                 %i.mdi.mdi-account-multiple
                 Teams
           .pull-sm-right
-            -# if current_user.admin == true
             = link_to content_tag(:i, '', class:'mdi mdi-account-multiple-plus') + ' New', new_team_path, class: 'btn btn-primary'
 
         .card-block
