@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     authenticate :user do
       resources :teams
       resources :users
-      root to: "teams#index", as: :authenticated_root
     end
 
     # Roots
