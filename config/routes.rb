@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Scope manages languages
-  scope "/:locale", locale: /en|ja/ do
+  scope "/:locale", locale: /ja|de|nl|en/ do
 
     # Devise
     devise_for :users
@@ -15,10 +15,7 @@ Rails.application.routes.draw do
     end
 
     # Roots
-    root to: "welcomes#index", as: :public_root
-    authenticated :user do
-      root to: "teams#index"
-    end
+    root to: "welcomes#index"
 
     # Reroute bad links to home
     get "*path", to: "welcomes#index"
@@ -26,5 +23,5 @@ Rails.application.routes.draw do
 
   # Redirect to language
   root to: redirect("/#{I18n.default_locale}", status: 302), as: :redirected_root
-  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(en|ja)\/).*/}, format: false
+  get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(ja|de|nl|en)\/).*/}, format: false
 end

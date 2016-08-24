@@ -1,0 +1,10 @@
+de:
+  language: Deutsch
+  shared:
+    navbar:
+      name: Zeitgeber
+      menuitem: Artikel
+  welcomes:
+    index:
+      header: Verwalten Remote Teams
+      subheader: Plan Treffen, Ansicht Standorte, nicht mehr Zeitzone Verwirrung.

@@ -3,18 +3,14 @@
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
-          .pull-left
+          .pull-sm-left
             %ol.breadcrumb
-              %li
-                = link_to teams_path do
-                  %span.fa.fa-users
-                  Teams
-              %li.active
-                %span.fa.fa-users
+              %li.breadcrumb-item.active
+                %i.mdi.mdi-account
                 Users
-          .pull-right
+          .pull-sm-right
             -# if current_user.admin == true
-            = link_to 'New', new_user_path, class: 'btn btn-primary'
+            = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'btn btn-primary'
 
         .card-block
           %table.table
@@ -31,10 +27,10 @@
                     = link_to user.email, user_path(user)
                   %td
                     - if user.admin
-                      Yes
+                      %i.mdi.mdi-check
                     - else
-                      No
+                      %i.mdi.mdi-close
                   %td.text-xs-right
                     -# if current_user.admin == true
-                    = link_to 'Edit', edit_user_path(user), class: 'btn btn-outline-secondary'
+                    = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'
                     = link_to 'Delete', user_path(user), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'

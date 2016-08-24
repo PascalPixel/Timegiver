@@ -2,9 +2,9 @@ ja:
   language: 日本語
   shared:
     navbar:
-      name: Zeitgeber
-      menuitem: Item
+      name: 時間贈り主
+      menuitem: アイテム
   welcomes:
     index:
-      header: Keep track of remote teams
-      subheader: Plan meetings, view locations, no more timezone mess.
+      header: リモートで働くチームと常につながる
+      subheader: ミーティングや会議の予定を立てたり、現在地を確認しあったり。時差に惑わされることはもうありません。

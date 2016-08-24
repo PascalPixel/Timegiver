@@ -1,11 +1,10 @@
 .container#flash
   .row
-    .col-sm-12
+    .col-sm-6.offset-sm-3
       - if flash
-        #flash
-          - flash.each do |name, msg|
-            - if msg.is_a?(String)
-              .alert.alert-default{class: "alert-#{name == "notice" ? "info" : "success"}"}
-                %a.close{"data-dismiss" => "alert"}
-                  &times;
-                = content_tag :div, msg, :id => "flash_#{name}"
+        - flash.each do |name, msg|
+          - if msg.is_a?(String)
+            .alert.alert-default.animated.fadeInDown.delay{class: "alert-#{name == "notice" ? "info" : "success"}"}
+              %a.close{"data-dismiss" => "alert"}
+                &times;
+              = content_tag :div, msg, :id => "flash_#{name}"

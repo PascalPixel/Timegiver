@@ -3,16 +3,15 @@
     .col-lg-8.offset-lg-2.col-md-10.offset-md-1
       .card
         .card-header.clearfix
-          .pull-left
+          .pull-sm-left
             %ol.breadcrumb
-              %li
+              %li.breadcrumb-item
                 = link_to teams_path do
-                  %span.fa.fa-users
+                  %i.mdi.mdi-account-multiple
                   Teams
-              %li= link_to @team.team_name, team_path(@team), style: "color:##{@team.color}"
-              %li.active Edit
-          .pull-right
-            = link_to 'Add User', users_path, class: 'btn btn-outline-secondary'
-            = link_to 'Cancel', team_path(@team), class: 'btn btn-outline-secondary'
+              %li.breadcrumb-item= link_to @team.team_name, team_path(@team), style: "color:##{@team.color}"
+              %li.breadcrumb-item.active Edit
+          .pull-sm-right
+            = link_to 'Cancel', team_path(@team), class: 'btn btn-secondary'
 
         = render 'form'
