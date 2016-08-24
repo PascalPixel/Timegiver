@@ -6,6 +6,6 @@ class User < ApplicationRecord
   has_many :teams, through: :team_users
 
   def team_list
-    self.admin ? Team.all : self.teams
+    self.teams
   end
 end

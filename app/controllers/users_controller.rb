@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   # DELETE /users/1
   def destroy
     @user.destroy
-    redirect_to admin_users_url, notice: 'User was successfully deleted.'
+    redirect_to users_url, notice: 'User was successfully deleted.'
   end
 
   private
@@ -53,6 +53,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :admin)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
     end
 end

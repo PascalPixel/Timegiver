@@ -28,7 +28,7 @@
                       = user.first_name
                       = user.last_name
                   %td
-                    - if user.admin
+                    - if self.team_user.admin
                       %i.mdi.mdi-check
                     - else
                       %i.mdi.mdi-close

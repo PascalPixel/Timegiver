@@ -5,7 +5,7 @@ class Team < ApplicationRecord
   has_many :team_users, dependent: :destroy
   has_many :users, through: :team_users
 
-  validates :team_name, presence: true
+  validates :team_name, presence: true, uniqueness: true
   validates :description, presence: true, length: { minimum: 20 }
   validates :color, presence: true, length: { minimum: 6, maximum: 6 }
   validates :last_name, presence: true
@@ -18,7 +18,6 @@ class Team < ApplicationRecord
   validates :rate, presence: true
   validates :currency_sign, presence: true
   validates :currency, presence: true, length: { minimum: 3, maximum: 3 }
-
 
   def name
     "#{self.first_name} #{self.last_name}"
