@@ -5,7 +5,7 @@ default: &default
 
 development:
   <<: *default
-  database: zeitgeber_dev
+  database: timegiver_dev
 
 test:
   <<: *default
