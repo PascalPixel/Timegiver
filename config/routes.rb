@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     end
 
     # Roots
-    root to: "welcomes#index", as: :public_root
+    root to: "welcomes#index"
 
     # Reroute bad links to home
     get "*path", to: "welcomes#index"
