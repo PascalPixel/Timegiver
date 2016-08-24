@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "Deleting teams" do
   before(:each) do
-    @user = login_as_user(FactoryGirl.create(:user)
+    @user = login_as_user(FactoryGirl.create(:user))
   end
 
   let!(:team) {Team.create(

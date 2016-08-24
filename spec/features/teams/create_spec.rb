@@ -25,11 +25,6 @@ describe "Creating teams" do
     expect(page).to have_content("Description is too short")
   end
 
-  it "displays an error when the team has no title" do
-    create_team title: ""
-    expect(page).to have_content("Title can't be blank")
-  end
-
   it "displays an error when the team has no street_address_1" do
     create_team street_address_1: ""
     expect(page).to have_content("Street address 1 can't be blank")
