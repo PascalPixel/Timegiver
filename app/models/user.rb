@@ -10,6 +10,6 @@ class User < ApplicationRecord
   end
 
   def admin?(team)
-    self.team_users(team: team, admin: true).present?
+    self.team_users.where(team: team, admin: true).present?
   end
 end

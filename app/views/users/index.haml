@@ -9,7 +9,6 @@
                 %i.mdi.mdi-account
                 Users
           .pull-sm-right
-            -# if current_user.admin == true
             = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'btn btn-primary'
 
         .card-block
@@ -17,7 +16,7 @@
             %thead
               %tr
                 %th Email
-                %th Admin
+                %th Type
                 %th.text-xs-right Actions
 
             %tbody
@@ -33,6 +32,5 @@
                     -# - else
                     -#   %i.mdi.mdi-close
                   %td.text-xs-right
-                    -# if current_user.admin == true
                     = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'
                     = link_to 'Delete', user_path(user), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'

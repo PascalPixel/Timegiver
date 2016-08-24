@@ -25,12 +25,6 @@ end
 [
   {
     description: "Amazingly fishy folks!",
-    last_name: "Salmoncake",
-    first_name: "Sammy",
-    title: "Business Shark",
-    rate: "6",
-    currency_sign: "🐟",
-    currency: "USD",
     team_name: "Salmon, Inc.",
     street_address_1: "Fishlane 88",
     street_address_2: "Aquarium 1",
@@ -41,19 +35,13 @@ end
   },
   {
     description: "Amazingly fishy folks!",
-    last_name: "Salmoncake",
-    first_name: "Sammy",
-    title: "Business Shark",
-    rate: "6",
-    currency_sign: "🐟",
-    currency: "USD",
     team_name: "Dance Monkey",
-    street_address_1: "Fishlane 88",
-    street_address_2: "Aquarium 1",
-    postal: "121212",
-    city: "Tunaberg",
-    country: "Sardinia",
-    color: "FC7F6F"
+    street_address_1: "1A Monkeyroad",
+    street_address_2: "",
+    postal: "2323-BA",
+    city: "Partytown",
+    country: "Mexapan",
+    color: "FCE400"
   }
 ].each do |t|
   team = Team.find_by_team_name(t[:team_name])
