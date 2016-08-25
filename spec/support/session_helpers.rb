@@ -14,7 +14,7 @@ module CommonFeatureHelpers
     within '#new_user' do
       fill_in "Email", with: @user.email
       fill_in "Password", with: "password"
-      click_on "Log in"
+      click_on I18n.t('devise.shared.links.sign_in')
     end
     @user
   end

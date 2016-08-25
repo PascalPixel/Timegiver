@@ -15,6 +15,9 @@ gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
 gem 'devise', '~> 4.2.0' # Users! Everywhere!
 gem 'devise-i18n', '~> 1.1.0' # Translations for users
 
+#Storage
+gem 'aws-sdk', '~> 2' # Amazon S3
+
 gem "paperclip", "~> 5.0.0" # For Avatars
 
 # Precompilers

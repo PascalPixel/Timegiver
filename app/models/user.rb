@@ -6,7 +6,11 @@ class User < ApplicationRecord
   has_many :teams, through: :team_users
 
   def team_list
-    self.admin ? Team.all : self.teams
+    self.teams
+  end
+
+  def admin?(team)
+    self.team_users.where(team: team, admin: true).present?
   end
 
   has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
