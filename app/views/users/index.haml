@@ -15,7 +15,7 @@
           %table.table
             %thead
               %tr
-                %th Email
+                %th User
                 %th Type
                 %th.text-xs-right Actions
 
@@ -24,6 +24,7 @@
                 %tr{id: dom_id(user)}
                   %td
                     = link_to user_path(user) do
+                      = image_tag 'placeholder.png', class: 'avatar avatar-inline'
                       = user.first_name
                       = user.last_name
                   %td

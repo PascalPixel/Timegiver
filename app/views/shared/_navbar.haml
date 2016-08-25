@@ -15,7 +15,7 @@
           = link_to content_tag(:i, '', class:'mdi mdi-account') + ' ' + t('.users'), users_path, class: 'nav-link'
 
         %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, '', class: 'mdi mdi-account-circle'), edit_user_registration_path, class: 'nav-link'
+          = link_to content_tag(:i, '', class: 'mdi mdi-account-circle') + ' Edit Profile', edit_user_registration_path, class: 'nav-link'
 
         %li.nav-item.pull-xs-none.pull-md-left
           = link_to content_tag(:i, '', class:'mdi mdi-logout-variant') + ' ' + t('.sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link'
