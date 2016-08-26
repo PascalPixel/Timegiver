@@ -1,0 +1,12 @@
+.container
+  .col-sm-8.offset-sm-2
+    .card
+      %h5.card-header
+        %i.mdi.mdi-account-plus
+        = t('devise.invitations.new.header')
+      .card-block
+        = simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post} do |f|
+          = devise_error_messages!
+          - resource.class.invite_key_fields.each do |field|
+            = f.input field
+          = f.button :submit, t('devise.invitations.new.submit_button')

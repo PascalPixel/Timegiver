@@ -3,7 +3,7 @@
     .card
       %h5.card-header
         %i.mdi.mdi-replay
-        = t(".resend_confirmation_instructions")
+        = t('.resend_confirmation_instructions')
       .card-block
         = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
           = f.error_notification
@@ -11,5 +11,5 @@
           .form-inputs
             = f.input :email, required: true, autofocus: true
           .form-actions
-            = f.button :submit, t(".resend_confirmation_instructions")
-        = render "devise/shared/links"
+            = f.button :submit, t('.resend_confirmation_instructions')
+        = render 'devise/shared/links'
