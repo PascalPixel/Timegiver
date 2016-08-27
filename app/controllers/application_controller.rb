@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
   before_action :set_locale
@@ -16,21 +14,15 @@ class ApplicationController < ActionController::Base
   end
 
   def current_path_new_locale(new_locale)
-    case new_locale
-    when :ja
-      locale = '/ja'
-    when :de
-      locale = '/de'
-    when :nl
-      locale = '/nl'
-    else
-      locale = '/en'
+    locale = I18n.default_locale
+    I18n.available_locales.each do |lan|
+      if new_locale == lan
+        locale = "/#{lan}"
+      end
     end
-    request.path.sub(/\/(ja|de|nl|en)/, locale)
+    request.path.sub(/\/(#{I18n.available_locales.join('|')})/, locale)
   end
 
-  # Prevent CSRF attacks by raising an exception.
-# For APIs, you may want to use :null_session instead.
 protect_from_forgery with: :exception
 
 before_filter :configure_permitted_parameters, if: :devise_controller?

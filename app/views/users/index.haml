@@ -7,7 +7,7 @@
             %ol.breadcrumb
               %li.breadcrumb-item.active
                 %i.mdi.mdi-account
-                Users
+                = t('shared.navbar.users')
           .pull-sm-right
             = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'btn btn-primary'
 
@@ -15,7 +15,7 @@
           %table.table
             %thead
               %tr
-                %th Email
+                %th User
                 %th Type
                 %th.text-xs-right Actions
 
@@ -24,6 +24,7 @@
                 %tr{id: dom_id(user)}
                   %td
                     = link_to user_path(user) do
+                      = image_tag 'placeholder.png', class: 'avatar avatar-inline'
                       = user.first_name
                       = user.last_name
                   %td

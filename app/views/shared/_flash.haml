@@ -4,7 +4,7 @@
       - if flash
         - flash.each do |name, msg|
           - if msg.is_a?(String)
-            .alert.alert-default.animated.fadeInDown.delay{class: "alert-#{name == "notice" ? "info" : "success"}"}
-              %a.close{"data-dismiss" => "alert"}
+            .alert.alert-default.animated.fadeInDown.delay{class: "alert-#{name == 'notice' ? 'info' : 'success'}"}
+              %a.close{'data-dismiss' => 'alert'}
                 &times;
               = content_tag :div, msg, :id => "flash_#{name}"
