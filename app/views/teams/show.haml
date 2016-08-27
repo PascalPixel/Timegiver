@@ -13,7 +13,9 @@
           .pull-sm-right
             - if current_user.admin?(@team)
               = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
-              = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+              = link_to 'Invite', new_user_invitation_path, class: 'btn btn-success'
+            - else current_user
+              = link_to 'Leave', edit_team_path(@team), class: 'btn btn-danger'
 
         %ul.list-group.list-group-flush
           %li.list-group-item
@@ -50,6 +52,3 @@
                         = user.last_name
                         - if user.admin?(@team)
                           %i.mdi.mdi-star
-                - if current_user.admin?(@team)
-                  %br
-                  = link_to 'Invite new user', new_user_invitation_path, class: 'btn btn-success'

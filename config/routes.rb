@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     # Private
     authenticate :user do
       resources :teams
-      resources :users
+      resources :users, only: 'show'
     end
 
     # Roots

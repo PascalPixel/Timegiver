@@ -13,5 +13,6 @@
               %li.breadcrumb-item.active Edit
           .pull-sm-right
             = link_to 'Cancel', team_path(@team), class: 'btn btn-secondary'
+            = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
         = render 'form'

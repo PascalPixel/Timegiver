@@ -12,9 +12,6 @@
           = link_to content_tag(:i, '', class:'mdi mdi-account-multiple') + ' ' + t('.teams'), teams_path, class: 'nav-link'
 
         %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, '', class:'mdi mdi-account') + ' ' + t('.users'), users_path, class: 'nav-link'
-
-        %li.nav-item.pull-xs-none.pull-md-left
           = link_to content_tag(:i, '', class: 'mdi mdi-account-circle') + ' ' + t('devise.registrations.edit.title', resource: current_user.model_name.human), edit_user_registration_path, class: 'nav-link'
 
         %li.nav-item.pull-xs-none.pull-md-left

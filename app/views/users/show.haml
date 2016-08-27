@@ -5,17 +5,10 @@
         .card-header.clearfix
           .pull-sm-left
             %ol.breadcrumb
-              %li.breadcrumb-item
-                = link_to users_path(team_id: @team) do
-                  %i.mdi.mdi-account
-                  = t('shared.navbar.users')
               %li.breadcrumb-item.active
                 = @user.first_name
                 = @user.last_name
           .pull-sm-right
-            - if current_user == @user
-              = link_to 'Edit', edit_user_path(@user), class: 'btn btn-secondary'
-              = link_to 'Delete', user_path(@user), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
         .card-block
           %dl
