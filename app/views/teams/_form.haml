@@ -10,7 +10,9 @@
             = msg
     .row
       .col-sm-6
-        %h5 Team
+        %h5
+          %span.mdi.mdi-account-multiple
+          Team
         .field
           = f.label :team_name
           = f.text_field :team_name, class: 'form-control', autofocus: true
@@ -20,9 +22,10 @@
         .field
           = f.label :color
           = f.text_area :color, class: 'form-control'
-      .col-sm-6
         %hr
-        %h5 Address
+        %h5
+          %span.mdi.mdi-directions
+          Address
         .field
           = f.label :street_address_1
           = f.text_field :street_address_1, class: 'form-control'
@@ -38,15 +41,26 @@
         .field
           = f.label :country
           = f.text_field :country, class: 'form-control'
-    .row
-      .col-sm-12
-        %hr
-        %h4 Users
+      .col-sm-6
+        %h5
+          %span.mdi.mdi-account
+          = t('shared.navbar.users')
+        -# %select.chosen-select
+        -#   %option{:selected => "selected"} Add new user
+        -#   - User.order(:email).each do |user|
+        -#     %option{:value => user.email}
+        -#       = label_tag dom_id(user), user.email.split('@').first
         = hidden_field_tag "team[user_ids][]", nil
-        - User.order(:email).each do |user|
-          .col-sm-4
-            = check_box_tag "team[user_ids][]", user.id, @team.user_ids.include?(user.id), id: dom_id(user)
-            = label_tag dom_id(user), user.email.split('@').first
+        %ul.list-unstyled
+          - User.order(:email).each do |user|
+            %li
+              = check_box_tag "team[user_ids][]", user.id, @team.user_ids.include?(user.id), id: dom_id(user)
+              - if user.first_name
+                = user.first_name
+                = user.last_name
+              - else
+                = user.email
+
   .card-footer
     .row
       .col-sm-12
