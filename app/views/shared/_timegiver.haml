@@ -14,17 +14,7 @@
       .col-xs-9
         .timebar
           .line.bar
-            - (0..23).each do |hour|
-              - hour = hour + script_time
-
-              - if hour > 23
-                - hour = hour - 24
-
-              - if script_time == hour
-                .hour.active-time><= hour
-              - elsif (9..17).include?(hour)
-                .hour.work-time><= hour
-              - elsif (7..22).include?(hour)
-                .hour.awake-time><= hour
-              - else
-                .hour><= hour
+            - (0..23).drop(13).each do |hour|
+              = render partial: 'shared/hour', locals: {hour: hour, time: time, script_time: script_time, readable_time: readable_time}
+            - (0..23).first(13).each do |hour|
+              = render partial: 'shared/hour', locals: {hour: hour, time: time, script_time: script_time, readable_time: readable_time}
