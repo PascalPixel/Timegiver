@@ -16,4 +16,5 @@
               = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
               = link_to 'Invite new user', new_user_invitation_path, class: 'btn btn-success'
 
-        = render partial: 'shared/timegiver'
+        = render partial: 'shared/timelines'
+        = render partial: 'shared/map'

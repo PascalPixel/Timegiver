@@ -1,0 +1,51 @@
+.timelines
+  .time
+    display: inline-block
+    text-align: center
+    width: 4.1666666667%
+    color: $gray-light
+    margin-bottom: .5rem
+
+    &.work-time
+      color: $gray-dark
+
+  .line
+    width: 100%
+
+    &.bar
+      height: 2rem
+      border-radius: .3rem
+      overflow: hidden
+      background: linear-gradient(180deg, darken($gray-lighter, 8%), darken($gray-lighter, 5%))
+      margin-bottom: .5rem
+      border-bottom: .1rem solid $gray-lighter
+
+      .hour
+        width: 4.1666666667%
+        height: 2rem
+        float: left
+        padding-top: 0.45rem
+        text-align: center
+        font-size: .7rem
+        color: rgba(255,255,255,0.2)
+        font-weight: bold
+        background: linear-gradient(180deg, darken($gray-lighter, 10%), darken($gray-lighter, 8%))
+
+        &.awake-time
+          background: linear-gradient(180deg, darken($gray-lighter, 8%), darken($gray-lighter, 5%))
+          color: rgba(255,255,255,0.4)
+
+        &.work-time
+          background: linear-gradient(180deg, lighten($gray-light, 3%),  $gray-light)
+          color: rgba(255,255,255,0.6)
+
+          &.first
+            border-radius: .3rem 0 0 .3rem
+
+          &.last
+            border-radius: 0 .3rem .3rem 0
+
+        &.active-time
+          background: $gray-dark
+          color: $gray-lightest
+          border-radius: .3rem
