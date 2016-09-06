@@ -4,7 +4,12 @@
 - if script_time == hour
   .hour.active-time><= hour
 - elsif (9..17).include?(hour)
-  .hour.work-time><= hour
+  - if hour == 9
+    .hour.work-time.first><= hour
+  - elsif hour == 17
+    .hour.work-time.last><= hour
+  - else
+    .hour.work-time><= hour
 - elsif (7..22).include?(hour)
   .hour.awake-time><= hour
 - else
