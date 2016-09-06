@@ -1,20 +1,36 @@
 # Users
 [
   {
-    first_name: 'Alice',
-    last_name: 'Edge',
-    email: 'admin@superpencil.com',
+    first_name: 'Pascal',
+    last_name: 'Pencil',
+    email: 'pascal@superpencil.com',
     password: 'password',
     password_confirmation: 'password',
-    time_zone: 'Singapore'
+    time_zone: 'Tokyo'
   },
   {
-    first_name: 'Taku',
-    last_name: 'Otaku',
-    email: 'regular@superpencil.com',
+    first_name: 'Clara',
+    last_name: 'Nitsch',
+    email: 'clara@superpencil.com',
     password: 'password',
     password_confirmation: 'password',
-    time_zone: 'Buenos Aires'
+    time_zone: 'Brisbane'
+  },
+  {
+    first_name: 'Marc',
+    last_name: 'van Eyken',
+    email: 'marc@superpencil.com',
+    password: 'password',
+    password_confirmation: 'password',
+    time_zone: 'Eastern Time (US & Canada)'
+  },
+  {
+    first_name: 'Chris',
+    last_name: 'Favreau',
+    email: 'chris@superpencil.com',
+    password: 'password',
+    password_confirmation: 'password',
+    time_zone: 'Eastern Time (US & Canada)'
   }
 ].each do |u|
   user = User.find_by_email(u[:email])
@@ -36,8 +52,8 @@ end
     color: "FC7F6F"
   },
   {
-    description: "Amazingly fishy folks!",
-    team_name: "Dance Monkey",
+    description: "Remote design and development agency!",
+    team_name: "Superpencil",
     street_address_1: "1A Monkeyroad",
     street_address_2: "",
     postal: "2323-BA",
@@ -55,17 +71,27 @@ end
 # Team User
 [
   {
-    email: 'admin@superpencil.com',
-    team_name: 'Dance Monkey',
+    email: 'pascal@superpencil.com',
+    team_name: 'Superpencil',
     admin: true
   },
   {
-    email: 'regular@superpencil.com',
-    team_name: 'Dance Monkey',
+    email: 'clara@superpencil.com',
+    team_name: 'Superpencil',
     admin: false
   },
   {
-    email: 'regular@superpencil.com',
+    email: 'marc@superpencil.com',
+    team_name: 'Superpencil',
+    admin: false
+  },
+  {
+    email: 'chris@superpencil.com',
+    team_name: 'Superpencil',
+    admin: false
+  },
+  {
+    email: 'pascal@superpencil.com',
     team_name: 'Salmon, Inc.',
     admin: true
   }

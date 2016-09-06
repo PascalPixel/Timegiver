@@ -1,6 +1,6 @@
 .container
   .row
-    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
+    .col-xs-12
       .card
         .card-header.clearfix
           .pull-sm-left
@@ -14,46 +14,6 @@
             - if current_user.admin?(@team)
               = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
               = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+              = link_to 'Invite new user', new_user_invitation_path, class: 'btn btn-success'
 
-        %ul.list-group.list-group-flush
-          %li.list-group-item
-            .row
-              .col-sm-6
-                %h5
-                  %span.mdi.mdi-account-multiple
-                  Team
-                %p
-                  %span.team-color{style: "color:##{@team.color}"}
-                    = @team.team_name
-                  %br
-                  = @team.description
-                %p
-                  = @team.street_address_1
-                  %br
-                  = @team.street_address_2
-                  %br
-                  = @team.postal
-                  = @team.city
-                  %br
-                  = @team.country
-
-              .col-sm-6
-                %h5
-                  %span.mdi.mdi-account
-                  = t('shared.navbar.users')
-                %ul.list-unstyled
-                  - @team.users.each do |user|
-                    %li
-                      = link_to user do
-                        = image_tag 'placeholder.png', class: 'avatar avatar-inline'
-                        = user.first_name
-                        = user.last_name
-                        - if user.admin?(@team)
-                          %i.mdi.mdi-star
-                        %br
-                        %span.tag.tag-primary= Time.current.in_time_zone(user.time_zone).strftime("%H:%M")
-                        %small
-                          = user.time_zone
-                - if current_user.admin?(@team)
-                  %br
-                  = link_to 'Invite new user', new_user_invitation_path, class: 'btn btn-success'
+        = render partial: 'shared/timegiver'
