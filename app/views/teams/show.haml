@@ -50,6 +50,10 @@
                         = user.last_name
                         - if user.admin?(@team)
                           %i.mdi.mdi-star
+                        %br
+                        %span.tag.tag-primary= Time.current.in_time_zone(user.time_zone).strftime("%H:%M")
+                        %small
+                          = user.time_zone
                 - if current_user.admin?(@team)
                   %br
                   = link_to 'Invite new user', new_user_invitation_path, class: 'btn btn-success'

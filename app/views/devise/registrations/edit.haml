@@ -14,6 +14,7 @@
                 = t('.currently_waiting_confirmation_for_email', email: resource.unconfirmed_email)
             = f.input :first_name, required: false
             = f.input :last_name, required: false
+            = f.input :time_zone, required: false
             = f.input :password, autocomplete: 'off', hint: t('.leave_blank_if_you_don_t_want_to_change_it'), required: false
             = f.input :password_confirmation, required: false
             = f.input :current_password, hint: t('.we_need_your_current_password_to_confirm_your_changes'), required: true

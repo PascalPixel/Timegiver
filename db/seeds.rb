@@ -5,14 +5,16 @@
     last_name: 'Edge',
     email: 'admin@superpencil.com',
     password: 'password',
-    password_confirmation: 'password'
+    password_confirmation: 'password',
+    time_zone: 'Singapore'
   },
   {
     first_name: 'Taku',
     last_name: 'Otaku',
     email: 'regular@superpencil.com',
     password: 'password',
-    password_confirmation: 'password'
+    password_confirmation: 'password',
+    time_zone: 'Buenos Aires'
   }
 ].each do |u|
   user = User.find_by_email(u[:email])
