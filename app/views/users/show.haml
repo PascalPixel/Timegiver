@@ -23,5 +23,9 @@
             %dd= @user.first_name
             %dt Last name
             %dd= @user.last_name
+            %dt Timezone
+            %dd
+              %span.tag.tag-primary= Time.current.in_time_zone(@user.time_zone).strftime("%H:%M")
+              = @user.time_zone
             %dt Email
             %dd= @user.email

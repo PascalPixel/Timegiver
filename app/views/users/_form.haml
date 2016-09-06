@@ -5,26 +5,12 @@
         - @user.errors.full_messages.each do |msg|
           .alert.alert-danger= msg
 
-    %p
-      = f.label :first_name
-      %br
-      = f.text_field :first_name, class: 'form-control', autofocus: true
-    %p
-      = f.label :last_name
-      %br
-      = f.text_field :last_name, class: 'form-control'
-    %p
-      = f.label :email
-      %br
-      = f.text_field :email, class: 'form-control'
-    %p
-      = f.label :password
-      %br
-      = f.password_field :password, class: 'form-control'
-    %p
-      = f.label :password_confirmation
-      %br
-      = f.password_field :password_confirmation, class: 'form-control'
+    = f.input :first_name, class: 'form-control', autofocus: true
+    = f.input :last_name, class: 'form-control'
+    = f.input :time_zone, required: true
+    = f.input :email, class: 'form-control'
+    = f.input :password, class: 'form-control'
+    = f.input :password_confirmation, class: 'form-control'
 
   .card-footer
     .row

@@ -16,7 +16,7 @@
             %thead
               %tr
                 %th User
-                %th Type
+                %th Time
                 %th.text-xs-right Actions
 
             %tbody
@@ -32,6 +32,8 @@
                     -#   %i.mdi.mdi-check
                     -# - else
                     -#   %i.mdi.mdi-close
+                    %span.tag.tag-primary= Time.current.in_time_zone(user.time_zone).strftime("%H:%M")
+                    = user.time_zone
                   %td.text-xs-right
                     = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'
                     = link_to 'Delete', user_path(user), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'

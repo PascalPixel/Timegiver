@@ -1,0 +1,20 @@
+#timegiver.card-block
+  - @team.users.each do |user|
+    - time = Time.current.in_time_zone(user.time_zone)
+    - script_time = time.hour
+    - readable_time = time.strftime("%H:%M")
+    .row{class: current_user == user ? 'current_user' : nil }
+      .col-xs-3
+        = link_to user do
+          = user.first_name
+          = user.last_name
+          - if user.admin?(@team)
+            %i.mdi.mdi-star
+        %span.tag.tag-primary= time.strftime('%Z')
+      .col-xs-9
+        .timebar
+          .line.bar
+            - (0..23).drop(13).each do |hour|
+              = render partial: 'shared/hour', locals: {hour: hour, time: time, script_time: script_time, readable_time: readable_time}
+            - (0..23).first(13).each do |hour|
+              = render partial: 'shared/hour', locals: {hour: hour, time: time, script_time: script_time, readable_time: readable_time}
