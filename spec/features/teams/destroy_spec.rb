@@ -7,7 +7,7 @@ describe "Deleting teams" do
 
   let!(:team) {Team.create(
     user_ids: [@user.id],
-    team_name: "Salmon, Inc.",
+    name: "Salmon, Inc.",
     description: "Bunch of fishy people",
     color: "00AAFF"
   )}
@@ -16,10 +16,10 @@ describe "Deleting teams" do
     visit teams_path
 
     within "#team_#{team.id}" do
-      click_link team.team_name
+      click_link team.name
     end
     click_link "Delete"
 
-    expect(page).to_not have_content(team.team_name)
+    expect(page).to_not have_content(team.name)
   end
 end

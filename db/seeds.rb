@@ -43,16 +43,16 @@ end
 [
   {
     description: "Amazingly fishy folks!",
-    team_name: "Salmon, Inc.",
+    name: "Salmon, Inc.",
     color: "FC7F6F"
   },
   {
     description: "Remote design and development agency!",
-    team_name: "Superpencil",
+    name: "Superpencil",
     color: "FCE400"
   }
 ].each do |t|
-  team = Team.find_by_team_name(t[:team_name])
+  team = Team.find_by_name(t[:name])
   unless team
     Team.create(t)
   end
@@ -62,32 +62,32 @@ end
 [
   {
     email: 'pascal@superpencil.com',
-    team_name: 'Superpencil',
+    name: 'Superpencil',
     admin: true
   },
   {
     email: 'clara@superpencil.com',
-    team_name: 'Superpencil',
+    name: 'Superpencil',
     admin: false
   },
   {
     email: 'marc@superpencil.com',
-    team_name: 'Superpencil',
+    name: 'Superpencil',
     admin: false
   },
   {
     email: 'chris@superpencil.com',
-    team_name: 'Superpencil',
+    name: 'Superpencil',
     admin: false
   },
   {
     email: 'pascal@superpencil.com',
-    team_name: 'Salmon, Inc.',
+    name: 'Salmon, Inc.',
     admin: true
   }
 ].each do |tu|
   user = User.find_by_email(tu[:email])
-  team = Team.find_by_team_name(tu[:team_name])
+  team = Team.find_by_name(tu[:name])
   if user && team
     team.team_users.create({user: user, admin: tu[:admin]})
   end

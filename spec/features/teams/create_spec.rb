@@ -11,7 +11,7 @@ describe "Creating teams" do
   end
 
   it "displays an error when the team has no team name" do
-    create_team team_name: ""
+    create_team name: ""
     expect(page).to have_content("Team name can't be blank")
   end
 
@@ -43,13 +43,13 @@ describe "Creating teams" do
   private
 
   def create_team(options={})
-    options[:team_name] ||= "Salmon, Inc."
+    options[:name] ||= "Salmon, Inc."
     options[:description] ||= "Bunch of fishy people"
     options[:color] ||= "00AAFF"
 
     visit new_team_path
 
-    fill_in "Team name", with: options[:team_name]
+    fill_in "Team name", with: options[:name]
     fill_in "Description", with: options[:description]
     fill_in "Color", with: options[:color]
     click_button "Save"

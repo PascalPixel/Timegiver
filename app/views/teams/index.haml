@@ -23,6 +23,6 @@
               - @teams.each do |team|
                 %tr{id: dom_id(team)}
                   %td
-                    %b= link_to team.team_name, team_path(team), style: "color:##{team.color}"
+                    %b= link_to team.name, team_path(team), style: "color:##{team.color}"
                   %td
                     = team.description

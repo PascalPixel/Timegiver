@@ -9,7 +9,7 @@
                 = link_to teams_path do
                   %i.mdi.mdi-account-multiple
                   = t('shared.navbar.teams')
-              %li.breadcrumb-item.active{style: "color:##{@team.color}"}= @team.team_name
+              %li.breadcrumb-item.active{style: "color:##{@team.color}"}= @team.name
           .pull-sm-right
             - if current_user.admin?(@team)
               = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
