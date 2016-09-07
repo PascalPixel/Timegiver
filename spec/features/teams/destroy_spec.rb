@@ -9,11 +9,6 @@ describe "Deleting teams" do
     user_ids: [@user.id],
     team_name: "Salmon, Inc.",
     description: "Bunch of fishy people",
-    street_address_1: "Fishlane 1",
-    street_address_2: "Aquarium A",
-    postal: "121212",
-    city: "Tunaberg",
-    country: "Sardinia",
     color: "00AAFF"
   )}
 

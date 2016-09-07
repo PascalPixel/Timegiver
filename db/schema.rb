@@ -38,14 +38,9 @@ ActiveRecord::Schema.define(version: 20160906020205) do
   create_table "teams", force: :cascade do |t|
     t.text     "description"
     t.string   "team_name"
-    t.string   "street_address_1"
-    t.string   "street_address_2"
-    t.string   "postal"
-    t.string   "city"
-    t.string   "country"
     t.string   "color"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "slug"
     t.index ["slug"], name: "index_teams_on_slug", unique: true, using: :btree
   end

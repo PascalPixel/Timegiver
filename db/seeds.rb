@@ -44,21 +44,11 @@ end
   {
     description: "Amazingly fishy folks!",
     team_name: "Salmon, Inc.",
-    street_address_1: "Fishlane 88",
-    street_address_2: "Aquarium 1",
-    postal: "121212",
-    city: "Tunaberg",
-    country: "Sardinia",
     color: "FC7F6F"
   },
   {
     description: "Remote design and development agency!",
     team_name: "Superpencil",
-    street_address_1: "1A Monkeyroad",
-    street_address_2: "",
-    postal: "2323-BA",
-    city: "Partytown",
-    country: "Mexapan",
     color: "FCE400"
   }
 ].each do |t|
