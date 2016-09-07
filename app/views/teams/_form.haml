@@ -1,34 +1,29 @@
 = simple_form_for @team do |f|
-  .card-block
-    - if @team.errors.any?
-      #error_explanation
-        - @team.errors.full_messages.each do |msg|
-          .alert.alert-danger.alert-dismissible{:role => 'alert'}
-            %button.close{'aria-label' => 'Close', 'data-dismiss' => 'alert', :type => 'button'}
-              %span{'aria-hidden' => 'true'} ×
-            %b Error:
-            = msg
-    .row
-      .col-sm-6
-        %h5 Team
-        .field
-          = f.label :name
-          = f.text_field :name, class: 'form-control', autofocus: true
-        .field
-          = f.label :description
-          = f.text_area :description, class: 'form-control'
-        .field
-          = f.label :color
-          = f.text_area :color, class: 'form-control'
-      .col-sm-6
-        %hr
-        %h4 Users
-        = hidden_field_tag "team[user_ids][]", nil
-        - User.order(:email).each do |user|
-          .col-sm-4
-            = check_box_tag "team[user_ids][]", user.id, @team.user_ids.include?(user.id), id: dom_id(user)
-            = label_tag dom_id(user), user.email.split('@').first
-  .card-footer
-    .row
-      .col-sm-12
-        = f.submit 'Save', class: 'btn btn-primary btn-block'
+  - if @team.errors.any?
+    #error_explanation
+      - @team.errors.full_messages.each do |msg|
+        .alert.alert-danger.alert-dismissible{:role => 'alert'}
+          %button.close{'aria-label' => 'Close', 'data-dismiss' => 'alert', :type => 'button'}
+            %span{'aria-hidden' => 'true'} ×
+          %b Error:
+          = msg
+  .row
+    .col-sm-6
+      %h5 Team
+      .field
+        = f.label :name
+        = f.text_field :name, class: 'form-control', autofocus: true
+      .field
+        = f.label :description
+        = f.text_area :description, class: 'form-control'
+      .field
+        = f.label :color
+        = f.text_area :color, class: 'form-control'
+    .col-sm-6
+      %h5 Users
+      = hidden_field_tag "team[user_ids][]", nil
+      - User.order(:email).each do |user|
+        = check_box_tag "team[user_ids][]", user.id, @team.user_ids.include?(user.id), id: dom_id(user)
+        = label_tag dom_id(user), user.email.split('@').first
+  %hr
+  = f.submit 'Save', class: 'btn btn-primary btn-block'

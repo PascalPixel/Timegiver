@@ -12,7 +12,7 @@
   <style>
     #tzlimits {
       fill: none;
-      stroke: rgba(255,255,255,.1);
+      stroke: rgba(255,255,255,.05);
     }
   </style>
   <g id="tzlimits">

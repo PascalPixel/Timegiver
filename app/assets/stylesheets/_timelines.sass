@@ -16,9 +16,8 @@
       height: 2rem
       border-radius: .3rem
       overflow: hidden
-      background: linear-gradient(180deg, darken($gray-lighter, 8%), darken($gray-lighter, 5%))
+      background: darken($gray-lighter, 5%)
       margin-bottom: .5rem
-      border-bottom: .1rem solid $gray-lighter
 
       .hour
         width: 4.1666666667%
@@ -29,14 +28,14 @@
         font-size: .7rem
         color: rgba(255,255,255,0.2)
         font-weight: bold
-        background: linear-gradient(180deg, darken($gray-lighter, 10%), darken($gray-lighter, 8%))
+        background: darken($gray-lighter, 8%)
 
         &.awake-time
-          background: linear-gradient(180deg, darken($gray-lighter, 8%), darken($gray-lighter, 5%))
+          background: darken($gray-lighter, 5%)
           color: rgba(255,255,255,0.4)
 
         &.work-time
-          background: linear-gradient(180deg, lighten($gray-light, 3%),  $gray-light)
+          background: $gray-light
           color: rgba(255,255,255,0.6)
 
           &.first

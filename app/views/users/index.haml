@@ -1,38 +1,28 @@
-.container
-  .row
-    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .card
-        .card-header.clearfix
-          .pull-sm-left
-            %ol.breadcrumb
-              %li.breadcrumb-item.active
-                %i.mdi.mdi-account
-                = t('shared.navbar.users')
-          .pull-sm-right
-            = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'btn btn-primary'
-
-        .card-block
-          %table.table
-            %thead
-              %tr
-                %th User
-                %th Timezone
-                %th.text-xs-right Actions
-
-            %tbody
-              - @users.each do |user|
-                %tr{id: dom_id(user)}
-                  %td
-                    = link_to user_path(user) do
-                      = image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", class: 'avatar avatar-inline'
-                      = user.first_name
-                      = user.last_name
-                  %td
-                    -# - if user.admin?(@team)
-                    -#   %i.mdi.mdi-check
-                    -# - else
-                    -#   %i.mdi.mdi-close
-                    %span.tag.tag-primary= Time.current.in_time_zone(user.time_zone).strftime('%Z')
-                  %td.text-xs-right
-                    = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'
-                    = link_to 'Delete', user_path(user), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+.clearfix
+  .pull-sm-left
+    %ol.breadcrumb
+      %li.breadcrumb-item.active
+        %i.mdi.mdi-account
+        = t('shared.navbar.users')
+  .pull-sm-right
+    = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'btn btn-primary'
+%hr
+%table.table
+  %thead
+    %tr
+      %th User
+      %th Timezone
+      %th.text-xs-right Actions
+  %tbody
+    - @users.each do |user|
+      %tr{id: dom_id(user)}
+        %td
+          = link_to user_path(user) do
+            = image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", class: 'avatar avatar-inline'
+            = user.first_name
+            = user.last_name
+        %td
+          %span.tag.tag-primary= Time.current.in_time_zone(user.time_zone).strftime('%Z')
+        %td.text-xs-right
+          = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'
+          = link_to 'Delete', user_path(user), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'

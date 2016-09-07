@@ -1,4 +1,4 @@
-.timelines.card-block
+.timelines
   - @team.users.each do |user|
     - time = Time.current.in_time_zone(user.time_zone)
     - script_time = time.hour
