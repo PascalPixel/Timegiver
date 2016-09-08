@@ -24,6 +24,7 @@
       = hidden_field_tag "team[user_ids][]", nil
       - User.order(:email).each do |user|
         = check_box_tag "team[user_ids][]", user.id, @team.user_ids.include?(user.id), id: dom_id(user)
-        = label_tag dom_id(user), user.email.split('@').first
+        = label_tag dom_id(user), user.first_name + ' ' + user.last_name
+        %br
   %hr
-  = f.submit 'Save', class: 'btn btn-primary btn-block'
+  = f.submit 'Save', class: 'btn btn-sm btn-primary btn-block'

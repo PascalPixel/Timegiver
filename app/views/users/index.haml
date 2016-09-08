@@ -1,28 +1,20 @@
-.clearfix
-  .pull-sm-left
-    %ol.breadcrumb
-      %li.breadcrumb-item.active
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      .nav-link
         %i.mdi.mdi-account
         = t('shared.navbar.users')
-  .pull-sm-right
-    = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'btn btn-primary'
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'nav-link text-success'
 %hr
-%table.table
-  %thead
-    %tr
-      %th User
-      %th Timezone
-      %th.text-xs-right Actions
-  %tbody
-    - @users.each do |user|
-      %tr{id: dom_id(user)}
-        %td
+.row
+  - @users.each do |user|
+    .col-sm-4
+      .card{id: dom_id(user)}
+        .card-block
           = link_to user_path(user) do
             = image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", class: 'avatar avatar-inline'
             = user.first_name
             = user.last_name
-        %td
-          %span.tag.tag-primary= Time.current.in_time_zone(user.time_zone).strftime('%Z')
-        %td.text-xs-right
-          = link_to 'Edit', edit_user_path(user), class: 'btn btn-secondary'
-          = link_to 'Delete', user_path(user), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
+            %span.tag.tag-primary= Time.current.in_time_zone(user.time_zone).strftime('%Z')

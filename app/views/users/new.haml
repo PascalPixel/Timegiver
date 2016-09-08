@@ -1,14 +1,15 @@
-.clearfix
-  .pull-sm-left
-    %ol.breadcrumb
-      %li.breadcrumb-item
-        = link_to users_path(team_id: @team) do
-          %i.mdi.mdi-account
-          = t('shared.navbar.users')
-      %li.breadcrumb-item.active
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to users_path(team_id: @team), class: 'nav-link' do
+        %i.mdi.mdi-account
+        = t('shared.navbar.users')
+    %li.nav-item
+      .nav-link
         %i.mdi.mdi-account-plus
         Add
-  .pull-sm-right
-    = link_to 'Cancel', users_path(team_id: @team), class: 'btn btn-secondary'
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to 'Cancel', users_path(team_id: @team), class: 'nav-link'
 %hr
 = render partial: 'form'

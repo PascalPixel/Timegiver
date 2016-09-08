@@ -4,15 +4,11 @@
     - script_time = time.hour
     - readable_time = time.strftime("%H:%M")
     .row{class: current_user == user ? 'current_user' : nil }
-      .col-lg-3
+      .col-md-2
         = link_to user do
           = image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", class: 'avatar avatar-inline'
           = user.first_name
-          = user.last_name
-          - if user.admin?(@team)
-            %i.mdi.mdi-star
-        %span.tag.tag-primary= time.strftime('%Z')
-      .col-lg-9
+      .col-md-10
         .timebar
           .line.bar
             - (0..23).drop(13).each do |hour|

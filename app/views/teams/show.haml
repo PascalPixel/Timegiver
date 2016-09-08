@@ -1,15 +1,19 @@
-.clearfix
-  .pull-sm-left
-    %ol.breadcrumb
-      %li.breadcrumb-item
-        = link_to teams_path do
-          %i.mdi.mdi-account-multiple
-          = t('shared.navbar.teams')
-      %li.breadcrumb-item.active{style: "color:##{@team.color}"}= @team.name
-  .pull-sm-right
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to teams_path, class: 'nav-link' do
+        %i.mdi.mdi-account-multiple
+        = t('shared.navbar.teams')
+    %li.nav-item
+      .nav-link{style: "color:##{@team.color}"}
+        = @team.name
+  %ul.nav.navbar-nav.pull-sm-right
     - if current_user.admin?(@team)
-      = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
-      = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
-      = link_to 'Invite new user', new_user_invitation_path, class: 'btn btn-success'
+      %li.nav-item
+        = link_to 'Edit', edit_team_path(@team), class: 'nav-link'
+      %li.nav-item
+        = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'nav-link text-danger'
+      %li.nav-item
+        = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Invite new user', new_user_invitation_path, class: 'nav-link text-success'
 %hr
 = render partial: 'shared/timelines'
