@@ -28,3 +28,13 @@
         = @user.time_zone
       %dt Email
       %dd= @user.email
+      %dt City
+      %dd= @user.city
+      %dt Country
+      %dd= @user.country
+      %dt Latitude
+      %dd= @user.latitude
+      %dt Longitude
+      %dd= @user.longitude
+      %dt Timezone lookup from latlong
+      %dd= Timezone.lookup(-35.17, 149.7)
