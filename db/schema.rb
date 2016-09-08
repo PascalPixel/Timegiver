@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160906020205) do
+ActiveRecord::Schema.define(version: 20160908054428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 20160906020205) do
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
   end
 
+  create_table "meetings", force: :cascade do |t|
+    t.integer  "team_id"
+    t.string   "title"
+    t.text     "description"
+    t.date     "date"
+    t.time     "time"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "team_users", force: :cascade do |t|
     t.integer  "team_id"
     t.integer  "user_id"
@@ -37,7 +47,7 @@ ActiveRecord::Schema.define(version: 20160906020205) do
 
   create_table "teams", force: :cascade do |t|
     t.text     "description"
-    t.string   "team_name"
+    t.string   "name"
     t.string   "color"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -73,6 +83,7 @@ ActiveRecord::Schema.define(version: 20160906020205) do
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true, using: :btree
     t.index ["invitations_count"], name: "index_users_on_invitations_count", using: :btree
     t.index ["invited_by_id"], name: "index_users_on_invited_by_id", using: :btree
+    t.index ["invited_by_type", "invited_by_id"], name: "index_users_on_invited_by_type_and_invited_by_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 

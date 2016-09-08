@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     authenticate :user do
       resources :teams
       resources :users
+      resources :meetings
     end
 
     # Roots

@@ -16,6 +16,11 @@
           .popside= t('.users')
 
       %li.nav-item
+        = link_to meetings_path, class: 'nav-link' do
+          %span.mdi.mdi-calendar
+          .popside= t('.meetings')
+
+      %li.nav-item
         = link_to edit_user_registration_path, class: 'nav-link' do
           %span.mdi.mdi-account-circle
           .popside= t('devise.registrations.edit.title', resource: current_user.model_name.human)
