@@ -1,0 +1,26 @@
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to meetings_path(team_id: @team), class: 'nav-link' do
+        %i.mdi.mdi-calendar
+        = t('shared.navbar.meetings')
+    %li.nav-item
+      .nav-link
+        = @meeting.title
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to 'Edit', edit_meeting_path(@meeting), class: 'nav-link'
+    %li.nav-item
+      = link_to 'Delete', meeting_path(@meeting), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'nav-link text-danger'
+%hr
+%h1
+  = @meeting.title
+.row
+  .col-sm-10.offset-sm-2
+    %dl
+      %dt Description
+      %dd= @meeting.description
+      %dt Date
+      %dd= @meeting.date
+      %dt Time
+      %dd= @meeting.time

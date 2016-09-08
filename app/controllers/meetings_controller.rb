@@ -4,7 +4,7 @@ class MeetingsController < ApplicationController
 
   # GET /teams
   def index
-    @meetings = current_team.meeting_list.order(:date)
+    @meetings = Meeting.order(:date)
   end
 
   # GET /admin/1
@@ -13,7 +13,7 @@ class MeetingsController < ApplicationController
 
   # GET /admin/new
   def new
-    @meeting = Meeting.new(team_ids: [current_team.id])
+    @meeting = Meeting.new
   end
 
   # GET /admin/1/edit

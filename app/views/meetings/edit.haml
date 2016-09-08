@@ -1,0 +1,16 @@
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to meetings_path(team_id: @team), class: 'nav-link' do
+        %i.mdi.mdi-calendar
+        = t('shared.navbar.meetings')
+    %li.nav-item
+      = link_to meeting_path(@meeting), class: 'nav-link' do
+        = @meeting.description
+    %li.nav-item
+      .nav-link Edit
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to 'Cancel', meetings_path(team_id: @team), class: 'nav-link'
+%hr
+= render partial: 'form'

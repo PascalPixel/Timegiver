@@ -1,0 +1,18 @@
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      .nav-link
+        %i.mdi.mdi-calendar
+        = t('shared.navbar.meetings')
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to content_tag(:i, '', class:'mdi mdi-calendar') + ' New', new_meeting_path, class: 'nav-link'
+%hr
+.row
+  - @meetings.each do |meeting|
+    .col-sm-4
+      .card{id: dom_id(meeting)}
+        .card-block
+          = link_to meeting.title, meeting_path(meeting), style: "color:##{team.color}"
+          %br
+          = meeting.description

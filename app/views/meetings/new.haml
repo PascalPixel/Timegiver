@@ -1,0 +1,15 @@
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to meetings_path, class: 'nav-link' do
+        %i.mdi.mdi-calendar
+        = t('shared.navbar.meetings')
+    %li.nav-item
+      .nav-link
+        %i.mdi.mdi-calendar-plus
+        New
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to 'Cancel', meetings_path, class: 'nav-link'
+%hr
+= render 'form'
