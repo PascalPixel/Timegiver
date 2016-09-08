@@ -53,10 +53,6 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
     def user_params
-<<<<<<< HEAD
-      params.require(:user).permit(:email, :password, :password_confirmation, :admin, :avatar)
-=======
-      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
->>>>>>> master
+      params.require(:user).permit(:first_name, :last_name, :time_zone, :email, :password, :password_confirmation, :avatar)
     end
 end

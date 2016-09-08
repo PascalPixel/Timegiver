@@ -1,0 +1,17 @@
+.timelines
+  - @team.users.each do |user|
+    - time = Time.current.in_time_zone(user.time_zone)
+    - script_time = time.hour
+    - readable_time = time.strftime("%H:%M")
+    .row{class: current_user == user ? 'current_user' : nil }
+      .col-md-2
+        = link_to user do
+          = image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", class: 'avatar avatar-inline'
+          = user.first_name
+      .col-md-10
+        .timebar
+          .line.bar
+            - (0..23).drop(13).each do |hour|
+              = render partial: 'shared/hour', locals: {hour: hour, time: time, script_time: script_time, readable_time: readable_time}
+            - (0..23).first(13).each do |hour|
+              = render partial: 'shared/hour', locals: {hour: hour, time: time, script_time: script_time, readable_time: readable_time}

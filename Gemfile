@@ -14,6 +14,7 @@ gem 'friendly_id', '~> 5.1.0' # Girl-next-door url's
 # Authentication
 gem 'devise', '~> 4.2.0' # Users! Everywhere!
 gem 'devise-i18n', '~> 1.1.0' # Translations for users
+gem 'devise_invitable', '~> 1.7.0' # Invite users
 
 #Storage
 gem 'aws-sdk', '~> 2' # Amazon S3
@@ -40,6 +41,7 @@ gem 'bootbox-rails', '~> 0.5.0' # Fancy Bootstrap alerts
 gem 'jquery-rails', '~> 4.2.1' # jQuery, super handy
 gem 'bootstrap', '~> 4.0.0.alpha3.1' # Bootstrap 4 for layout
 gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
+# gem 'timezone', '~> 1.1.1' # Timezone to lat/long
 
 # Bower
 source 'https://rails-assets.org' do

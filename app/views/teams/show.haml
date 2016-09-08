@@ -1,45 +1,19 @@
-.container
-  .row
-    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .card
-        .card-header.clearfix
-          .pull-sm-left
-            %ol.breadcrumb
-              %li.breadcrumb-item
-                = link_to teams_path do
-                  %i.mdi.mdi-account-multiple
-                  Teams
-              %li.breadcrumb-item.active{style: "color:##{@team.color}"}= @team.team_name
-          .pull-sm-right
-            - if current_user.admin?(@team)
-              = link_to 'Edit', edit_team_path(@team), class: 'btn btn-secondary'
-              = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
-
-        %ul.list-group.list-group-flush
-          %li.list-group-item
-            .row
-              .col-sm-6
-                %h1.team-color{style: "color:##{@team.color}"}
-                  = @team.team_name
-                %p= @team.description
-                %p
-                  = @team.street_address_1
-                  %br
-                  = @team.street_address_2
-                  %br
-                  = @team.postal
-                  = @team.city
-                  %br
-                  = @team.country
-
-              .col-sm-6
-                %h4 Users
-                %dl
-                  - @team.users.each do |user|
-                    = link_to user do
-                      %h6
-                        = image_tag 'placeholder.png', class: 'avatar avatar-inline'
-                        = user.first_name
-                        = user.last_name
-                        - if user.admin?(@team)
-                          %i.mdi.mdi-star
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to teams_path, class: 'nav-link' do
+        %i.mdi.mdi-account-multiple
+        = t('shared.navbar.teams')
+    %li.nav-item
+      .nav-link{style: "color:##{@team.color}"}
+        = @team.name
+  %ul.nav.navbar-nav.pull-sm-right
+    - if current_user.admin?(@team)
+      %li.nav-item
+        = link_to 'Edit', edit_team_path(@team), class: 'nav-link'
+      %li.nav-item
+        = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'nav-link text-danger'
+      %li.nav-item
+        = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Invite new user', new_user_invitation_path, class: 'nav-link text-success'
+%hr
+= render partial: 'shared/timelines'

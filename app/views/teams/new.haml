@@ -1,18 +1,15 @@
-.container
-  .row
-    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .card
-        .card-header.clearfix
-          .pull-sm-left
-            %ol.breadcrumb
-              %li.breadcrumb-item
-                = link_to teams_path do
-                  %i.mdi.mdi-account-multiple
-                  Teams
-              %li.breadcrumb-item.active
-                %i.mdi.mdi-account-multiple-plus
-                New
-          .pull-sm-right
-            = link_to 'Cancel', teams_path, class: 'btn btn-secondary'
-
-        = render 'form'
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to teams_path, class: 'nav-link' do
+        %i.mdi.mdi-account-multiple
+        = t('shared.navbar.teams')
+    %li.nav-item
+      .nav-link
+        %i.mdi.mdi-account-multiple-plus
+        New
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to 'Cancel', teams_path, class: 'nav-link'
+%hr
+= render 'form'

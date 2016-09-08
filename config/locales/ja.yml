@@ -3,9 +3,9 @@ ja:
   shared:
     navbar:
       name: 時間贈り主
-      teams: Teams
-      users: Users
-      sign_out: Sign Out
+      teams: チームズ
+      users: ユーザーズ
+      sign_out: ログアウト
   welcomes:
     index:
       header: リモートで働くチームと常につながる

@@ -1,27 +1,30 @@
-.container
-  .row
-    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .card
-        .card-header.clearfix
-          .pull-sm-left
-            %ol.breadcrumb
-              %li.breadcrumb-item
-                = link_to users_path(team_id: @team) do
-                  %i.mdi.mdi-account
-                  Users
-              %li.breadcrumb-item.active
-                = @user.first_name
-                = @user.last_name
-          .pull-sm-right
-            - if current_user == @user
-              = link_to 'Edit', edit_user_path(@user), class: 'btn btn-secondary'
-              = link_to 'Delete', user_path(@user), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
-
-        .card-block
-          %dl
-            %dt First name
-            %dd= @user.first_name
-            %dt Last name
-            %dd= @user.last_name
-            %dt Email
-            %dd= @user.email
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to users_path(team_id: @team), class: 'nav-link' do
+        %i.mdi.mdi-account
+        = t('shared.navbar.users')
+    %li.nav-item
+      .nav-link
+        = @user.first_name
+        = @user.last_name
+  %ul.nav.navbar-nav.pull-sm-right
+    - if current_user == @user
+      %li.nav-item
+        = link_to 'Edit', edit_user_path(@user), class: 'nav-link'
+      %li.nav-item
+        = link_to 'Delete', user_path(@user), :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'nav-link text-danger'
+%hr
+%h1
+  = image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(@user.email)}", class: 'avatar avatar-inline'
+  = @user.first_name
+  = @user.last_name
+.row
+  .col-sm-10.offset-sm-2
+    %dl
+      %dt Timezone
+      %dd
+        %span.tag.tag-primary= Time.current.in_time_zone(@user.time_zone).strftime("%H:%M")
+        = @user.time_zone
+      %dt Email
+      %dd= @user.email
