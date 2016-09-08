@@ -1,4 +1,4 @@
-![Timegiver](https://www.dropbox.com/s/o4dz019l4yfs2ud/Screenshot%202016-08-23%2021.51.18.png?dl=0)
+![Timegiver](/app/assets/images/timegiver.png?raw=true "Timegiver Logo")
 
 #### Description
 Timegiver is an open-source app to track a remote team.
