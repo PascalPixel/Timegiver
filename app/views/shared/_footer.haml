@@ -1,5 +1,12 @@
-%footer.m-t-3.m-b-1
-  .container-fluid
+%footer
+  .container-fluid.m-t-3.m-b-1
     .row
       .col-sm-6
-        Copyright © 2016 Superpencil Ltd.
+        %small Copyright © 2016 Superpencil Ltd.
+      .col-sm-6
+        .pull-sm-right
+          %a{href: "http://www.superpencil.com/?utm_source=timegiver&utm_medium=footer+link&utm_campaign=project", class: 'superpencil', alt: 'Superpencil'}
+            %small Design and Development by
+            %b.tag.tag-secondary
+              = image_tag 'superpencil.svg', alt: 'Superpencil'
+              Superpencil

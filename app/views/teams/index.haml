@@ -1,28 +1,18 @@
-.container
-  .row
-    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .card
-        .card-header.clearfix
-          .pull-sm-left
-            %ol.breadcrumb
-              %li.breadcrumb-item.active
-                %i.mdi.mdi-account-multiple
-                = t('shared.navbar.teams')
-          .pull-sm-right
-            = link_to content_tag(:i, '', class:'mdi mdi-account-multiple-plus') + ' New', new_team_path, class: 'btn btn-primary'
-
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      .nav-link
+        %i.mdi.mdi-account-multiple
+        = t('shared.navbar.teams')
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to content_tag(:i, '', class:'mdi mdi-account-multiple-plus') + ' New', new_team_path, class: 'nav-link'
+%hr
+.row
+  - @teams.each do |team|
+    .col-sm-4
+      .card{id: dom_id(team)}
         .card-block
-          %table.table
-            %thead
-              %tr
-                %th
-                  Name
-                %th
-                  Description
-            %tbody
-              - @teams.each do |team|
-                %tr{id: dom_id(team)}
-                  %td
-                    %b= link_to team.name, team_path(team), style: "color:##{team.color}"
-                  %td
-                    = team.description
+          = link_to team.name, team_path(team), style: "color:##{team.color}"
+          %br
+          = team.description
