@@ -28,3 +28,11 @@
         = @user.time_zone
       %dt Email
       %dd= @user.email
+.row
+  - @user.teams.each do |team|
+    .col-sm-4
+      .card{id: dom_id(team)}
+        .card-block
+          = link_to team.name, team_path(team), style: "color:##{team.color}"
+          %br
+          = team.description
