@@ -4,7 +4,6 @@ class Meeting < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true, length: { minimum: 20 }
 
-  validates :date, presence: true
-  validates :time, presence: true
+  validates :datetime, presence: true
 
 end

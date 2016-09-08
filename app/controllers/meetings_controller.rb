@@ -4,7 +4,7 @@ class MeetingsController < ApplicationController
 
   # GET /teams
   def index
-    @meetings = Meeting.order(:date)
+    @meetings = Meeting.order(:datetime)
   end
 
   # GET /admin/1
@@ -52,6 +52,6 @@ class MeetingsController < ApplicationController
     end
 
     def meeting_params
-      params.require(:meeting).permit(:title, :description, :name, :date, :time, team_ids: [])
+      params.require(:meeting).permit(:title, :description, :name, :datetime, team_ids: [])
     end
 end

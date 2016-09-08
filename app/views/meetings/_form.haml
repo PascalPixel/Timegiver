@@ -8,7 +8,7 @@
           %b Error:
           = msg
   .row
-    .col-sm-12
+    .col-sm-6
       %h5 Meeting
       .field
         = f.label :title
@@ -17,11 +17,11 @@
         = f.label :description
         = f.text_area :description, class: 'form-control'
       .field
-        = f.label :date
-        = f.date_select :date, class: 'form-control'
-      .field
-        = f.label :time
-        = f.time_select :time, class: 'form-control'
-      
+        = f.label :"Date & Time"
+        = f.datetime_select :datetime, class: 'form-control'
+    .col-sm-6
+      %h5 Team
+
+
   %hr
   = f.submit 'Save', class: 'btn btn-sm btn-primary btn-block'
