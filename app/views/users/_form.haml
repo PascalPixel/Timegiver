@@ -1,0 +1,14 @@
+= simple_form_for @user do |f|
+  - if @user.errors.any?
+    #error_explanation
+      - @user.errors.full_messages.each do |msg|
+        .alert.alert-danger= msg
+
+  = f.input :first_name, class: 'form-control', autofocus: true
+  = f.input :last_name, class: 'form-control'
+  = f.input :time_zone, required: true
+  = f.input :email, class: 'form-control'
+  = f.input :password, class: 'form-control'
+  = f.input :password_confirmation, class: 'form-control'
+  %hr
+  = f.submit 'Save', class: 'btn btn-sm btn-primary btn-block'

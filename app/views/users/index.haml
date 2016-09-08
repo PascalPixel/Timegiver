@@ -1,0 +1,20 @@
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      .nav-link
+        %i.mdi.mdi-account
+        = t('shared.navbar.users')
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to content_tag(:i, '', class:'mdi mdi-account-plus') + ' Add', new_user_path, class: 'nav-link text-success'
+%hr
+.row
+  - @users.each do |user|
+    .col-sm-4
+      .card{id: dom_id(user)}
+        .card-block
+          = link_to user_path(user) do
+            = image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email)}", class: 'avatar avatar-inline'
+            = user.first_name
+            = user.last_name
+            %span.tag.tag-primary= Time.current.in_time_zone(user.time_zone).strftime('%Z')

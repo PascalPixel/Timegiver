@@ -2,10 +2,12 @@ html, body
   height: 100%
 
 body
-  background: linear-gradient(0deg, darken($purple, 20%), darken($gray-lightest, 3%))
+  background: asset_url('bg.svg'), $gray-lighter
   background-repeat: no-repeat
   background-attachment: fixed
   font-weight: 200
+  background-size: cover
+  background-position: center
 
 // Sticky footer
 .wrapper
@@ -13,7 +15,7 @@ body
   height: auto !important
   height: 100%
   margin: 0 auto -5.5rem
-  padding-top: 7rem
+  padding-top: 2rem
 
 .footer,
 .push
@@ -51,62 +53,65 @@ body
 img
   max-width: 100%
 
-.navbar-fixed-top,
-.card-header
-  background: linear-gradient(180deg, lighten($gray-lightest, 2%), $gray-lightest)
-  border-top-color: lighten($gray-lightest, 10%)
-  border-bottom-color: darken($gray-lightest, 3%)
-
 .breadcrumb
   margin-bottom: 0rem
 
-.btn-secondary:active,
-.btn-secondary.active,
-.open > .btn-secondary.dropdown-toggle
+.superpencil
+  .tag-secondary
+    background-color: #FCE400
+    color: #774701
+    font-family: "Avenir Next", "Avenir", "Helvetica", "Arial", sans-serif
+    font-weight: bold
+
+  img
+    width: 17px
+    margin-right: -2px
+    margin-top: -1px
+
+// Sidebar
+.navbar-fixed-top
+  left: 3.5rem
+.navbar-left
+  position: fixed
+  left: 0rem
+  top: 0rem
+  bottom: 0rem
+  width: 3.5rem
   background: $gray-lightest
-  &:hover,
-  &:focus,
-  &.focus
-    background: $gray-lightest
+  border-radius: 0rem
+  font-size: 1.5rem
+  z-index: 8000
 
-.btn-primary
-  border-left: none
-  border-right: none
-  background: linear-gradient(180deg, lighten($brand-primary, 2%), $brand-primary)
-  border-top-color: lighten($brand-primary, 10%)
-  border-bottom-color: darken($brand-primary, 10%)
+  .navbar-nav .nav-item + .nav-item
+    margin: 0rem
 
-.btn-secondary
-  border-left: none
-  border-right: none
-  background: linear-gradient(180deg, lighten($gray-lighter, 2%), $gray-lighter)
-  border-top-color: lighten($gray-lighter, 10%)
-  border-bottom-color: darken($gray-lighter, 3%)
+  .nav-link
+    position: relative
 
-.btn-info
-  border-left: none
-  border-right: none
-  background: linear-gradient(180deg, lighten($brand-info, 2%), $brand-info)
-  border-top-color: lighten($brand-info, 10%)
-  border-bottom-color: darken($brand-info, 10%)
+    .popside
+      position: absolute
+      left: 3.5rem
+      top: .65rem
+      background: $gray-dark
+      padding: .2rem .7rem .25rem
+      font-size: 1rem
+      color: $gray-lighter
+      border-radius: .3rem
+      white-space: nowrap
+      display: none
+      &:before
+        width: 0px
+        height: 0px
+        border: .3rem solid
+        border-color: transparent $gray-dark transparent transparent
+        top: .7rem
+        left: -.5rem
+        content: ""
+        position: absolute
+    &:hover
+      .popside
+        display: block
 
-.btn-success
-  border-left: none
-  border-right: none
-  background: linear-gradient(180deg, lighten($brand-success, 2%), $brand-success)
-  border-top-color: lighten($brand-success, 10%)
-  border-bottom-color: darken($brand-success, 10%)
-
-.btn-warning
-  border-left: none
-  border-right: none
-  background: linear-gradient(180deg, lighten($brand-warning, 2%), $brand-warning)
-  border-top-color: lighten($brand-warning, 10%)
-  border-bottom-color: darken($brand-warning, 10%)
-
-.btn-danger
-  border-left: none
-  border-right: none
-  background: linear-gradient(180deg, lighten($brand-danger, 2%), $brand-danger)
-  border-top-color: lighten($brand-danger, 10%)
-  border-bottom-color: darken($brand-danger, 10%)
+.container-fluid,
+.container
+  padding-left: 4.5rem

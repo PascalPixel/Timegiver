@@ -1,18 +1,16 @@
-.container
-  .row
-    .col-lg-8.offset-lg-2.col-md-10.offset-md-1
-      .card
-        .card-header.clearfix
-          .pull-sm-left
-            %ol.breadcrumb
-              %li.breadcrumb-item
-                = link_to teams_path do
-                  %i.mdi.mdi-account-multiple
-                  = t('shared.navbar.teams')
-              %li.breadcrumb-item= link_to @team.team_name, team_path(@team), style: "color:##{@team.color}"
-              %li.breadcrumb-item.active Edit
-          .pull-sm-right
-            = link_to 'Cancel', team_path(@team), class: 'btn btn-secondary'
-            = link_to 'Delete', team_path(@team), method: :delete, data: { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
-
-        = render 'form'
+%nav.navbar.navbar-fixed-top
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to teams_path, class: 'nav-link' do
+        %i.mdi.mdi-account-multiple
+        = t('shared.navbar.teams')
+    %li.nav-item
+      = link_to @team.name, team_path(@team), style: "color:##{@team.color}", class: 'nav-link'
+    %li.nav-item
+      .nav-link
+        Edit
+  %ul.nav.navbar-nav.pull-sm-right
+    %li.nav-item
+      = link_to 'Cancel', team_path(@team), class: 'nav-link'
+%hr
+= render 'form'

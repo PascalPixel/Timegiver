@@ -1,33 +1,44 @@
-%nav.navbar.navbar-fixed-top
-  %button.navbar-toggler.hidden-md-up.pull-xs-right{'data-target' => '#collapsenav', 'data-toggle' => 'collapse', :type => 'button'}
-    %i.mdi.mdi-menu
-  = link_to root_url, class: 'navbar-brand' do
-    %i.mdi.mdi-timer-sand-empty
-    = t('.name')
-  #collapsenav.collapse.navbar-toggleable-sm.pull-xs-left.pull-md-none
-    %ul.nav.navbar-nav.pull-md-right
+%nav.navbar.navbar-left
+  %ul.nav.navbar-nav
+    %li.nav-item
+      = link_to root_url, class: 'nav-link' do
+        %span.mdi.mdi-timer-sand-empty
+        .popside Home
 
-      - if user_signed_in?
-        %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, '', class:'mdi mdi-account-multiple') + ' ' + t('.teams'), teams_path, class: 'nav-link'
+    - if user_signed_in?
+      %li.nav-item
+        = link_to teams_path, class: 'nav-link' do
+          %span.mdi.mdi-account-multiple
+          .popside= t('.teams')
+      %li.nav-item
+        = link_to users_path, class: 'nav-link' do
+          %span.mdi.mdi-account
+          .popside= t('.users')
 
-        %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, '', class: 'mdi mdi-account-circle') + ' ' + t('devise.registrations.edit.title', resource: current_user.model_name.human), edit_user_registration_path, class: 'nav-link'
+      %li.nav-item
+        = link_to edit_user_registration_path, class: 'nav-link' do
+          %span.mdi.mdi-account-circle
+          .popside= t('devise.registrations.edit.title', resource: current_user.model_name.human)
 
-        %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, '', class:'mdi mdi-logout-variant') + ' ' + t('.sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link'
+      %li.nav-item
+        = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+          %span.mdi.mdi-logout-variant
+          .popside= t('.sign_out')
 
-      - else
-        %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, '', class:'mdi mdi-login-variant') + ' ' + t('devise.shared.links.sign_in'), new_user_session_path, class: 'nav-link'
+    - else
+      %li.nav-item
+        = link_to new_user_session_path, class: 'nav-link' do
+          %span.mdi.mdi-login-variant
+          .popside= t('devise.shared.links.sign_in')
 
-        %li.nav-item.pull-xs-none.pull-md-left
-          = link_to content_tag(:i, '', class:'mdi mdi-pen') + ' ' +  t('devise.shared.links.sign_up'), new_user_registration_path, class: 'nav-link'
+      %li.nav-item
+        = link_to new_user_registration_path, class: 'nav-link' do
+          %span.mdi.mdi-pen
+          .popside= t('devise.shared.links.sign_up')
 
-      -# Language selector
-      %li.nav-item.pull-xs-none.pull-md-left
+      %li.nav-item
         .dropdown
-          %button.btn.btn-secondary#languageDropdown.dropdown-toggle{'aria-expanded' => 'false', 'aria-haspopup' => 'true', 'data-toggle' => 'dropdown', :type => 'button'}
+          %button.btn.btn-sm.btn-secondary#languageDropdown.dropdown-toggle{'aria-expanded' => 'false', 'aria-haspopup' => 'true', 'data-toggle' => 'dropdown', :type => 'button'}
             %i.mdi.mdi-translate
           .dropdown-menu.dropdown-menu-right{'aria-labelledby' => 'languageDropdown'}
             - I18n.available_locales.each do |lan|
