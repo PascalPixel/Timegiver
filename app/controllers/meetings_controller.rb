@@ -1,6 +1,6 @@
 class MeetingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :get_team, only: [:show, :edit, :update, :destroy]
+
 
   # GET /teams
   def index
@@ -52,6 +52,6 @@ class MeetingsController < ApplicationController
     end
 
     def meeting_params
-      params.require(:meeting).permit(:title, :description, :name, :datetime, team_ids: [])
+      params.require(:meeting).permit(:title, :description, :name, :datetime, :team_id)
     end
 end
