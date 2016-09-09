@@ -11,8 +11,21 @@
 .row
   - @teams.each do |team|
     .col-sm-4
-      .card{id: dom_id(team), style: "background-color:##{team.color}; color: rgba(0,0,0,.5);"}
+      .card.company-bg{id: dom_id(team), class: "company-bg-#{team.id}"}
         .card-block
-          = link_to team.name, team_path(team), style: "color: rgba(0,0,0,.8);"
+          = link_to team.name, team_path(team)
           %br
           = team.description
+    :scss
+      @function set-text-color($color) {
+        @if lightness($color) > 40% {
+          @return darken($color, 30%);
+        } @else {
+          @return lighten($color, 30%);
+        }
+      }
+      .company-bg-#{team.id},
+      .company-bg-#{team.id} a {
+        background: ##{team.color};
+        color: set-text-color(##{team.color});
+      }
