@@ -16,7 +16,7 @@ Github: [Superpencil/Timegiver](http://github.com/Superpencil/Timegiver)
 1. Download this repo and cd to the folder in Terminal.
 2. `xcode-select --install`
 3. `ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-4. `brew install rbenv ruby-build node postgresql`
+4. `brew install rbenv ruby-build postgresql`
 5. `echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile`
 6. `source ~/.bash_profile`
 7. `rbenv install 2.3.1`
