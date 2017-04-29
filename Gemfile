@@ -16,6 +16,11 @@ gem 'devise', '~> 4.2.0' # Users! Everywhere!
 gem 'devise-i18n', '~> 1.1.0' # Translations for users
 gem 'devise_invitable', '~> 1.7.0' # Invite users
 
+#Storage
+gem 'aws-sdk', '~> 2' # Amazon S3
+
+gem "paperclip", "~> 5.0.0" # For Avatars
+
 # Precompilers
 gem 'haml-rails', '~> 0.9.0' # HAML to HTML
 gem 'sass-rails', '~> 5.0.4' # Sass to CSS

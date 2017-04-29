@@ -6,6 +6,7 @@
   .form-inputs
     = f.input :first_name, required: true, autofocus: true
     = f.input :last_name, required: true
+    = f.input :avatar, as: :file;
     = f.input :time_zone, required: true
     = f.input :email, required: true
     = f.input :password, required: true
