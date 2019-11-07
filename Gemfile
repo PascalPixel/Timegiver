@@ -34,7 +34,7 @@ gem 'bootbox-rails', '~> 0.5.0' # Fancy Bootstrap alerts
 
 # Vendor
 gem 'jquery-rails', '~> 4.2.1' # jQuery, super handy
-gem 'bootstrap', '~> 4.0.0.alpha3.1' # Bootstrap 4 for layout
+gem 'bootstrap', '~> 4.1.3' # Bootstrap 4 for layout
 gem 'postmark-rails', '~> 0.13.0' # Email through Heroku
 # gem 'timezone', '~> 1.1.1' # Timezone to lat/long
 
