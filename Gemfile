@@ -27,7 +27,7 @@ gem 'redcarpet', '~> 3.3.4' # Markdown
 # Forms
 gem 'mail_form', github: 'plataformatec/mail_form', branch: 'master' # really?
 gem 'nested_form', '~> 0.3.2' # Formception
-gem 'simple_form', '~> 3.2.1' # Unformception
+gem 'simple_form', '~> 5.0.1' # Unformception
 
 # Alerts
 gem 'bootbox-rails', '~> 0.5.0' # Fancy Bootstrap alerts
