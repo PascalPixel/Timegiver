@@ -5,7 +5,7 @@ gem 'bundler', '>= 1.8.4'
 
 # Rails
 gem 'rails', '~> 5.0.0' # Ruby on Rails
-gem 'puma', '~> 3.6.0' # Faster local server
+gem 'puma', '~> 3.12.2' # Faster local server
 gem 'rails-i18n', '~> 5.0.0' # Show different languages
 gem 'pg', '~> 0.18.4' # Postgres databases are cool
 gem 'turbolinks', '~> 5.0.0' # Only reload page content
